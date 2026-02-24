@@ -43,6 +43,7 @@
             color: #555;
             font-size: 14px;
             margin-bottom: 25px;
+            line-height: 1.7;
         }
         .contact-links {
             display: flex;
@@ -79,10 +80,13 @@
             margin-bottom: 12px;
             color: #222;
             font-weight: 600;
+            padding-bottom: 5px;
+            border-bottom: 1px solid #eee;
         }
         .item {
-            margin-bottom: 10px;
+            margin-bottom: 15px;
             font-size: 14px;
+            line-height: 1.7;
         }
         .item a {
             color: #0056b3;
@@ -109,23 +113,42 @@
             font-size: 13px;
             margin-right: 8px;
         }
-        /* 项目卡片 */
+        /* --- 研究项目可视化优化 --- */
         .projects-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 15px;
+            grid-template-columns: 1fr;
+            gap: 20px;
             margin-top: 15px;
         }
         .project-card {
-            border: 1px solid #eee;
-            border-radius: 6px;
-            padding: 12px;
-            font-size: 13px;
+            border: 1px solid #d0d7de; /* 清晰边框 */
+            border-radius: 8px;
+            padding: 18px;
+            font-size: 14px;
+            line-height: 1.7;
+            background-color: #f6f8fa; /* 浅灰背景增强区分 */
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05); /* 轻微阴影提升立体感 */
         }
         .project-card h3 {
+            font-size: 16px;
+            margin-bottom: 12px;
+            color: #0550af; /* 蓝色标题突出重点 */
+            font-weight: 600;
+            border-bottom: 1px solid #eaeef2;
+            padding-bottom: 8px;
+        }
+        .project-card ul {
+            margin-left: 22px;
+            margin-top: 8px;
+            color: #373e47;
+        }
+        .project-card .progress {
+            margin-top: 12px;
+            padding-top: 8px;
+            border-top: 1px solid #eaeef2;
+            color: #0969da; /* 进度条颜色 */
+            font-weight: 500;
             font-size: 14px;
-            margin-bottom: 8px;
-            color: #222;
         }
         /* 右侧导航 */
         .sidebar-right {
@@ -164,12 +187,10 @@
     <div class="container">
         <!-- 左侧个人信息 -->
         <div class="sidebar-left">
-            <img src="avatar.jpg" class="avatar" alt="Mohan Yang">
+            <img src="C:\Users\Che\Desktop\rubbish\zjz.jpg" class="avatar" alt="Mohan Yang">
             <h1>Mohan Yang</h1>
             <p class="bio">
-                China Agricultural University<br>
-                College of Land Science and Technology<br>
-                Research interests: Remote sensing, crop disease monitoring, hyperspectral imaging
+                I am Mohan Yang, a first-year graduate student at the College of Land Science and Technology, China Agricultural University. My research focuses on agricultural remote sensing, with a current focus on integrating 3D crop modeling and hyperspectral data analysis to advance the monitoring and management of sugar beet diseases. On this site, you'll find updates on my research projects, methodological notes and progress toward precision agriculture applications.
             </p>
             <div class="contact-links">
                 <a href="https://scholar.google.com">
@@ -201,15 +222,15 @@
                 <h2>Directory</h2>
                 <div class="item">
                     <span class="date">2026-02-24</span>
-                    <span class="title">A Small Beginning, A Long Journey Ahead</span>
+                    <span class="title">Research Progress Update</span>
                 </div>
                 <div class="item">
                     <span class="date">2026-01-22</span>
-                    <span class="title">A Postmortem on a Failed Project</span>
+                    <span class="title">3D Radiative Transfer Model Building Notes</span>
                 </div>
                 <div class="item">
                     <span class="date">2025-12-30</span>
-                    <span class="title">A One-Page Reading Sheet</span>
+                    <span class="title">Hyperspectral Data Preprocessing Methods</span>
                 </div>
             </div>
 
@@ -243,11 +264,9 @@
             <div class="section">
                 <h2>Publications</h2>
                 <div class="item">
-                    <div class="title">
-                        <a href="#">Escape Ratio Contributes More Than Fluorescence Yield to SIF GPP Relationship Over Crops and Rainforest</a>
-                    </div>
-                    <div class="authors">Mohan Yang, Yelu Zeng, et al.</div>
-                    <div class="venue">IEEE Geoscience and Remote Sensing Letters, 2025</div>
+                    <div class="title">1. A robust two-stage framework for maize above-ground biomass prediction integrating spectral remote sensing and allometric growth model</div>
+                    <div class="authors">Mohan Yang*, Qiang Wu*, Jianbo Qi, Guijun Yang, Zanpu Wang, Zhenyu Wang, Jun Zhang, Hao Yang, Jinpeng Cheng, Shuping Xiong, Xinming Ma. (*Co-first author)</div>
+                    <div class="venue">Computers and Electronics in Agriculture, 2025, 235: 110398.</div>
                     <div class="links">
                         <a href="#">webpage</a>
                         <a href="#">pdf</a>
@@ -256,11 +275,19 @@
                     </div>
                 </div>
                 <div class="item">
-                    <div class="title">
-                        <a href="#">Tree-level carbon stock estimations across diverse species using multi-source remote sensing integration</a>
+                    <div class="title">2. Accurate Estimation of Maize Above Ground Biomass Using Integrated Multispectral and LiDAR Data</div>
+                    <div class="authors">Qiang Wu, Mohan Yang, Fenghui Duan, Zanpu Wang, Jiakun Kang, Hao Yang, Guijun Yang, Zhiyong Zhang, Xinming Ma, Jinpeng Cheng.</div>
+                    <div class="venue">Spectroscopy and Spectral Analysis, 2025,45(10):2906-2914.</div>
+                    <div class="links">
+                        <a href="#">webpage</a>
+                        <a href="#">pdf</a>
+                        <a href="#">abstract</a>
                     </div>
-                    <div class="authors">Li Qing, Jia Yin, et al., Mohan Yang</div>
-                    <div class="venue">Computers and Electronics in Agriculture, 2025</div>
+                </div>
+                <div class="item">
+                    <div class="title">3. Enhanced crop leaf area index estimation via random forest regression: Bayesian optimization and feature selection approach</div>
+                    <div class="authors">Jun Zhang, Jinpeng Cheng, Cuiping Liu, Qiang Wu, Shuping Xiong, Hao Yang, Shenglong Chang, Yuanyuan Fu, Mohan Yang, Shiyu Zhang, Guijun Yang, Xinming Ma.</div>
+                    <div class="venue">Remote Sensing. 2024, 16(21): 3917.</div>
                     <div class="links">
                         <a href="#">webpage</a>
                         <a href="#">pdf</a>
@@ -269,36 +296,59 @@
                 </div>
             </div>
 
-            <!-- 项目 -->
+            <!-- 研究项目（未来规划） -->
             <div class="section">
-                <h2>Projects</h2>
+                <h2>Research Projects (Future Plan)</h2>
                 <div class="projects-grid">
                     <div class="project-card">
-                        <h3>Forward Simulation & Parameter Inversion</h3>
-                        <p>Radiative transfer-based reflectance simulation and vegetation parameter retrieval.</p>
+                        <h3>Research 1: Attention-enhanced knowledge distillation for cross-scale multi-modal sugar beet disease grade classification</h3>
+                        <ul>
+                            <li>Data training completed</li>
+                            <li>Model standardized training completed</li>
+                            <li>Chart visualization standardized, draft writing completed</li>
+                        </ul>
+                        <div class="progress">Experiment progress: 90%</div>
                     </div>
                     <div class="project-card">
-                        <h3>Writing Dashboard</h3>
-                        <p>Track writing frequency, page views, and reader feedback trends.</p>
+                        <h3>Research 2: Sugar beet leaf chlorophyll content inversion and disease grading based on transfer learning and 3D radiative transfer model</h3>
+                        <ul>
+                            <li>All simulation data completed (SDK batch processing)</li>
+                            <li>Algorithm training in progress</li>
+                        </ul>
+                        <div class="progress">Experiment progress: 70%</div>
                     </div>
                     <div class="project-card">
-                        <h3>Public Notes</h3>
-                        <p>Spend 15 minutes daily turning learning into searchable public notes.</p>
+                        <h3>Research 3: Integrated study on 3D canopy radiation-heat-moisture coupling prediction model for crop diseases (Focus on precise monitoring and prediction of cucumber downy mildew in greenhouses)</h3>
+                        <ul>
+                            <li>Sensor deployment completed, partial data preliminary processing</li>
+                            <li>Helios model building completed</li>
+                        </ul>
+                        <div class="progress">Experiment progress: 30%</div>
+                    </div>
+                    <div class="project-card">
+                        <h3>Research 4: Prediction of spatio-temporal infection probability of sugar beet brown spot disease based on 3D radiation-temperature distribution and canopy humidity continuous model</h3>
+                        <ul>
+                            <li>Experimental plan initially planned</li>
+                            <li>Helios model building completed</li>
+                            <li>Experiment to be carried out in April 2026</li>
+                        </ul>
+                        <div class="progress">Experiment progress: Planning stage</div>
+                    </div>
+                    <div class="project-card">
+                        <h3>Research 5: Crop disease monitoring and prediction: A review of application progress of multi-modal cross-scale modeling, 3D radiation models and intelligent algorithms</h3>
+                        <ul>
+                            <li>Review writing to be carried out in October 2026</li>
+                        </ul>
+                        <div class="progress">Experiment progress: Planning stage</div>
                     </div>
                 </div>
             </div>
 
-            <!-- 其他 -->
+            <!-- 其他（获奖） -->
             <div class="section">
-                <h2>Misc</h2>
+                <h2>Misc (Awards & Honors)</h2>
                 <div class="item">
-                    2025 Admitted to the M.S. program in Land Use and Information Technology at China Agricultural University
-                </div>
-                <div class="item">
-                    2023 Renewable Energy Innovation Competition (Third Prize)
-                </div>
-                <div class="item">
-                    ESRI China Cup - Remote Sensing Application Track (Third Prize)
+                    College Students’ Extracurricular Academic and Scientific Works Competition - Henan Provincial Special Prize (top 0.75%) | 2025
                 </div>
             </div>
         </div>
@@ -308,20 +358,20 @@
             <div class="nav-item"><a href="#">Directory</a></div>
             <div class="nav-item"><a href="#">Blogs</a></div>
             <div class="nav-item"><a href="#">Publications</a></div>
-            <div class="nav-item"><a href="#">Projects</a></div>
+            <div class="nav-item"><a href="#">Research Projects</a></div>
             <div class="nav-item"><a href="#">Misc</a></div>
 
             <div style="margin-top: 30px;">
                 <div class="recent-item">
-                    <div class="title">A Small Beginning, A Long Journey Ahead</div>
+                    <div class="title">Research Progress Update</div>
                     <a href="#" class="read-more">Read full post</a>
                 </div>
                 <div class="recent-item">
-                    <div class="title">A Postmortem on a Failed Project</div>
+                    <div class="title">3D Radiative Transfer Model Building Notes</div>
                     <a href="#" class="read-more">Read full post</a>
                 </div>
                 <div class="recent-item">
-                    <div class="title">A One-Page Reading Sheet</div>
+                    <div class="title">Hyperspectral Data Preprocessing Methods</div>
                     <a href="#" class="read-more">Read full post</a>
                 </div>
             </div>
