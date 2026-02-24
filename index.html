@@ -23,11 +23,9 @@
             grid-template-columns: 220px 1fr 220px;
             gap: 40px;
         }
-        /* 左侧个人信息 */
         .sidebar-left {
             width: 220px;
         }
-        /* 修复头像显示的容器样式 */
         .avatar-container {
             width: 100px;
             height: 100px;
@@ -67,7 +65,7 @@
             gap: 6px;
         }
         .contact-links a:hover {
-            color: #0969da; /* 鼠标悬浮变色，提升交互感 */
+            color: #0969da;
         }
         .contact-links img {
             width: 14px;
@@ -78,7 +76,6 @@
             color: #666;
             margin-top: 30px;
         }
-        /* 中间主内容区 */
         .main-content {
             flex-grow: 1;
         }
@@ -123,7 +120,6 @@
             font-size: 13px;
             margin-right: 8px;
         }
-        /* --- 研究项目可视化优化 --- */
         .projects-grid {
             display: grid;
             grid-template-columns: 1fr;
@@ -131,18 +127,18 @@
             margin-top: 15px;
         }
         .project-card {
-            border: 1px solid #d0d7de; /* 清晰边框 */
+            border: 1px solid #d0d7de;
             border-radius: 8px;
             padding: 18px;
             font-size: 14px;
             line-height: 1.7;
-            background-color: #f6f8fa; /* 浅灰背景增强区分 */
-            box-shadow: 0 1px 3px rgba(0,0,0,0.05); /* 轻微阴影提升立体感 */
+            background-color: #f6f8fa;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
         }
         .project-card h3 {
             font-size: 16px;
             margin-bottom: 12px;
-            color: #0550af; /* 蓝色标题突出重点 */
+            color: #0550af;
             font-weight: 600;
             border-bottom: 1px solid #eaeef2;
             padding-bottom: 8px;
@@ -156,11 +152,10 @@
             margin-top: 12px;
             padding-top: 8px;
             border-top: 1px solid #eaeef2;
-            color: #0969da; /* 进度条颜色 */
+            color: #0969da;
             font-weight: 500;
             font-size: 14px;
         }
-        /* 右侧导航 */
         .sidebar-right {
             width: 220px;
             font-size: 13px;
@@ -195,9 +190,7 @@
 </head>
 <body>
     <div class="container">
-        <!-- 左侧个人信息 -->
         <div class="sidebar-left">
-            <!-- 修复头像容器，提升兼容性 -->
             <div class="avatar-container">
                 <img src="zjz.jpg" class="avatar" alt="Mohan Yang">
             </div>
@@ -210,11 +203,14 @@
                     <img src="https://cdn-icons-png.flaticon.com/16/565/565284.png" alt="Google Scholar">
                     Google Scholar
                 </a>
-                <a href="cv.pdf">
+                <a href="https://www.researchgate.net/profile/Mohan-Yang-11?ev=hdr_xprf">
+                    <img src="https://cdn-icons-png.flaticon.com/16/732/732210.png" alt="ResearchGate">
+                    ResearchGate
+                </a>
+                <a href="CV.docx">
                     <img src="https://cdn-icons-png.flaticon.com/16/2985/2985168.png" alt="CV">
                     CV
                 </a>
-                <!-- 核心修改：添加正确的邮箱超链接 -->
                 <a href="mailto:yangmohan0106@gmail.com">
                     <img src="https://cdn-icons-png.flaticon.com/16/732/732200.png" alt="Email">
                     yangmohan0106@gmail.com
@@ -229,9 +225,7 @@
             </div>
         </div>
 
-        <!-- 中间主内容区 -->
         <div class="main-content">
-            <!-- 目录 -->
             <div class="section">
                 <h2>Directory</h2>
                 <div class="item">
@@ -248,7 +242,6 @@
                 </div>
             </div>
 
-            <!-- 博客 -->
             <div class="section">
                 <h2>Blogs</h2>
                 <div class="item">
@@ -274,7 +267,6 @@
                 </div>
             </div>
 
-            <!-- 论文 -->
             <div class="section">
                 <h2>Publications</h2>
                 <div class="item">
@@ -310,7 +302,6 @@
                 </div>
             </div>
 
-            <!-- 研究项目（未来规划） -->
             <div class="section">
                 <h2>Research Projects (Future Plan)</h2>
                 <div class="projects-grid">
@@ -358,7 +349,6 @@
                 </div>
             </div>
 
-            <!-- 其他（获奖） -->
             <div class="section">
                 <h2>Misc (Awards & Honors)</h2>
                 <div class="item">
@@ -367,7 +357,6 @@
             </div>
         </div>
 
-        <!-- 右侧导航 -->
         <div class="sidebar-right">
             <div class="nav-item"><a href="#">Directory</a></div>
             <div class="nav-item"><a href="#">Blogs</a></div>
