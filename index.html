@@ -4,80 +4,325 @@
     <meta charset="UTF-8">
     <title>Mohan Yang - Personal Homepage</title>
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: "Times New Roman", serif; }
-        body { color: #333; line-height: 1.6; max-width: 1000px; margin: 40px auto; padding: 0 20px; }
-        .layout { display: flex; gap: 60px; }
-        .left-panel { width: 300px; flex-shrink: 0; }
-        .right-panel { flex-grow: 1; }
-        .avatar { width: 180px; height: 180px; border-radius: 50%; object-fit: cover; margin-bottom: 20px; }
-        h1 { font-size: 28px; margin: 15px 0; }
-        .bio { color: #666; margin-bottom: 30px; font-size: 15px; }
-        .contact-links { display: flex; flex-direction: column; gap: 10px; margin-bottom: 40px; }
-        .contact-links a { color: #333; text-decoration: none; display: flex; align-items: center; gap: 8px; font-size: 15px; }
-        .contact-links img { width: 16px; height: 16px; }
-        .top-nav { border-bottom: 1px solid #eee; padding-bottom: 8px; margin-bottom: 30px; }
-        .top-nav a { color: #666; text-decoration: none; margin-right: 20px; font-size: 14px; }
-        .section { margin-bottom: 40px; }
-        .section h2 { font-size: 20px; margin-bottom: 15px; padding-bottom: 5px; border-bottom: 1px solid #eee; }
-        .blog-item { margin-bottom: 12px; }
-        .blog-item a { color: #0066cc; text-decoration: none; }
-        .blog-item a:hover { text-decoration: underline; }
-        .blog-date { color: #666; font-size: 14px; margin-left: 10px; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Times New Roman", serif;
+        }
+        body {
+            color: #333;
+            line-height: 1.6;
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+            background-color: #fff;
+        }
+        .container {
+            display: grid;
+            grid-template-columns: 220px 1fr 220px;
+            gap: 40px;
+        }
+        /* 左侧个人信息 */
+        .sidebar-left {
+            width: 220px;
+        }
+        .avatar {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 15px;
+        }
+        h1 {
+            font-size: 22px;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+        .bio {
+            color: #555;
+            font-size: 14px;
+            margin-bottom: 25px;
+        }
+        .contact-links {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            margin-bottom: 30px;
+        }
+        .contact-links a {
+            color: #333;
+            text-decoration: none;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .contact-links img {
+            width: 14px;
+            height: 14px;
+        }
+        .copyright {
+            font-size: 12px;
+            color: #666;
+            margin-top: 30px;
+        }
+        /* 中间主内容区 */
+        .main-content {
+            flex-grow: 1;
+        }
+        .section {
+            margin-bottom: 35px;
+        }
+        .section h2 {
+            font-size: 18px;
+            margin-bottom: 12px;
+            color: #222;
+            font-weight: 600;
+        }
+        .item {
+            margin-bottom: 10px;
+            font-size: 14px;
+        }
+        .item a {
+            color: #0056b3;
+            text-decoration: none;
+        }
+        .item a:hover {
+            text-decoration: underline;
+        }
+        .item .date {
+            color: #666;
+            font-size: 13px;
+            margin-right: 8px;
+        }
+        .item .title {
+            font-weight: 500;
+        }
+        .item .authors,
+        .item .venue {
+            color: #555;
+            font-size: 13px;
+        }
+        .item .links a {
+            color: #0056b3;
+            font-size: 13px;
+            margin-right: 8px;
+        }
+        /* 项目卡片 */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin-top: 15px;
+        }
+        .project-card {
+            border: 1px solid #eee;
+            border-radius: 6px;
+            padding: 12px;
+            font-size: 13px;
+        }
+        .project-card h3 {
+            font-size: 14px;
+            margin-bottom: 8px;
+            color: #222;
+        }
+        /* 右侧导航 */
+        .sidebar-right {
+            width: 220px;
+            font-size: 13px;
+        }
+        .sidebar-right .nav-item {
+            margin-bottom: 8px;
+        }
+        .sidebar-right .nav-item a {
+            color: #333;
+            text-decoration: none;
+        }
+        .sidebar-right .nav-item a:hover {
+            text-decoration: underline;
+        }
+        .sidebar-right .recent-item {
+            margin-bottom: 12px;
+        }
+        .sidebar-right .recent-item .title {
+            font-size: 13px;
+            color: #222;
+            margin-bottom: 4px;
+        }
+        .sidebar-right .recent-item .read-more {
+            font-size: 12px;
+            color: #0056b3;
+            text-decoration: none;
+        }
+        .sidebar-right .recent-item .read-more:hover {
+            text-decoration: underline;
+        }
     </style>
 </head>
 <body>
-    <div class="layout">
-        <!-- 左侧个人信息区 -->
-        <div class="left-panel">
-            < img src="你的头像文件名.jpg" class="avatar">
+    <div class="container">
+        <!-- 左侧个人信息 -->
+        <div class="sidebar-left">
+            <img src="avatar.jpg" class="avatar" alt="Mohan Yang">
             <h1>Mohan Yang</h1>
-            <p class="bio">中国农业大学 | 土地科学与技术学院</p >
+            <p class="bio">
+                China Agricultural University<br>
+                College of Land Science and Technology<br>
+                Research interests: Remote sensing, crop disease monitoring, hyperspectral imaging
+            </p>
             <div class="contact-links">
-                <a href=" ">
-                    < img src="https://cdn-icons-png.flaticon.com/16/565/565284.png" alt="Google Scholar">
+                <a href="https://scholar.google.com">
+                    <img src="https://cdn-icons-png.flaticon.com/16/565/565284.png" alt="Google Scholar">
                     Google Scholar
-                </a >
-                <a href="你的CV链接">
-                    < img src="https://cdn-icons-png.flaticon.com/16/2985/2985168.png" alt="CV">
+                </a>
+                <a href="cv.pdf">
+                    <img src="https://cdn-icons-png.flaticon.com/16/2985/2985168.png" alt="CV">
                     CV
-                </a >
-                <a href="mailto:你的邮箱">
-                    < img src="https://cdn-icons-png.flaticon.com/16/732/732200.png" alt="Email">
+                </a>
+                <a href="mailto:mohan.yang@example.com">
+                    <img src="https://cdn-icons-png.flaticon.com/16/732/732200.png" alt="Email">
                     Email
-                </a >
-                <a href="你的GitHub链接">
-                    < img src="https://cdn-icons-png.flaticon.com/16/25/25231.png" alt="GitHub">
+                </a>
+                <a href="https://github.com/mohanyang-hub">
+                    <img src="https://cdn-icons-png.flaticon.com/16/25/25231.png" alt="GitHub">
                     GitHub
-                </a >
+                </a>
+            </div>
+            <div class="copyright">
+                &copy; 2026 Mohan Yang. All rights reserved.
             </div>
         </div>
 
-        <!-- 右侧内容区 -->
-        <div class="right-panel">
-            <div class="top-nav">
-                Home
-                Blog
-                Publications
-                Projects
+        <!-- 中间主内容区 -->
+        <div class="main-content">
+            <!-- 目录 -->
+            <div class="section">
+                <h2>Directory</h2>
+                <div class="item">
+                    <span class="date">2026-02-24</span>
+                    <span class="title">A Small Beginning, A Long Journey Ahead</span>
+                </div>
+                <div class="item">
+                    <span class="date">2026-01-22</span>
+                    <span class="title">A Postmortem on a Failed Project</span>
+                </div>
+                <div class="item">
+                    <span class="date">2025-12-30</span>
+                    <span class="title">A One-Page Reading Sheet</span>
+                </div>
             </div>
 
+            <!-- 博客 -->
             <div class="section">
                 <h2>Blogs</h2>
-                <div class="blog-item">
-                    如何用无人机数据计算玉米叶片LAI
-                    <span class="blog-date">2026-02-24</span>
+                <div class="item">
+                    <span class="date">2026-02-24</span>
+                    <span class="title">Reflection: A Small Beginning, A Long Journey Ahead</span>
+                    <p style="font-size: 13px; color: #555; margin-top: 4px;">
+                        Today, I built my first personal website. This simple beginning marks a meaningful step in how I document research, questions, and intellectual growth.
+                    </p>
                 </div>
-                <div class="blog-item">
-                    LED三维辐射传输模型模拟甜菜光谱的步骤
-                    <span class="blog-date">2026-02-20</span>
+                <div class="item">
+                    <span class="date">2026-01-22</span>
+                    <span class="title">Postmortem: A Postmortem on a Failed Project</span>
+                    <p style="font-size: 13px; color: #555; margin-top: 4px;">
+                        This project never shipped, but it clarified the importance of scope control, team coordination, and decision transparency.
+                    </p>
+                </div>
+                <div class="item">
+                    <span class="date">2025-12-30</span>
+                    <span class="title">Notes: A One-Page Reading Sheet</span>
+                    <p style="font-size: 13px; color: #555; margin-top: 4px;">
+                        I started using a one-page format for reading notes: one-sentence summary, three key insights, and one action item.
+                    </p>
                 </div>
             </div>
 
+            <!-- 论文 -->
             <div class="section">
                 <h2>Publications</h2>
-                <div class="blog-item">
-                    基于高光谱的甜菜叶片层级划分与敏感波段分析
-                    <span class="blog-date">2026</span>
+                <div class="item">
+                    <div class="title">
+                        <a href="#">Escape Ratio Contributes More Than Fluorescence Yield to SIF GPP Relationship Over Crops and Rainforest</a>
+                    </div>
+                    <div class="authors">Mohan Yang, Yelu Zeng, et al.</div>
+                    <div class="venue">IEEE Geoscience and Remote Sensing Letters, 2025</div>
+                    <div class="links">
+                        <a href="#">webpage</a>
+                        <a href="#">pdf</a>
+                        <a href="#">abstract</a>
+                        <a href="#">code</a>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="title">
+                        <a href="#">Tree-level carbon stock estimations across diverse species using multi-source remote sensing integration</a>
+                    </div>
+                    <div class="authors">Li Qing, Jia Yin, et al., Mohan Yang</div>
+                    <div class="venue">Computers and Electronics in Agriculture, 2025</div>
+                    <div class="links">
+                        <a href="#">webpage</a>
+                        <a href="#">pdf</a>
+                        <a href="#">abstract</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 项目 -->
+            <div class="section">
+                <h2>Projects</h2>
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <h3>Forward Simulation & Parameter Inversion</h3>
+                        <p>Radiative transfer-based reflectance simulation and vegetation parameter retrieval.</p>
+                    </div>
+                    <div class="project-card">
+                        <h3>Writing Dashboard</h3>
+                        <p>Track writing frequency, page views, and reader feedback trends.</p>
+                    </div>
+                    <div class="project-card">
+                        <h3>Public Notes</h3>
+                        <p>Spend 15 minutes daily turning learning into searchable public notes.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 其他 -->
+            <div class="section">
+                <h2>Misc</h2>
+                <div class="item">
+                    2025 Admitted to the M.S. program in Land Use and Information Technology at China Agricultural University
+                </div>
+                <div class="item">
+                    2023 Renewable Energy Innovation Competition (Third Prize)
+                </div>
+                <div class="item">
+                    ESRI China Cup - Remote Sensing Application Track (Third Prize)
+                </div>
+            </div>
+        </div>
+
+        <!-- 右侧导航 -->
+        <div class="sidebar-right">
+            <div class="nav-item"><a href="#">Directory</a></div>
+            <div class="nav-item"><a href="#">Blogs</a></div>
+            <div class="nav-item"><a href="#">Publications</a></div>
+            <div class="nav-item"><a href="#">Projects</a></div>
+            <div class="nav-item"><a href="#">Misc</a></div>
+
+            <div style="margin-top: 30px;">
+                <div class="recent-item">
+                    <div class="title">A Small Beginning, A Long Journey Ahead</div>
+                    <a href="#" class="read-more">Read full post</a>
+                </div>
+                <div class="recent-item">
+                    <div class="title">A Postmortem on a Failed Project</div>
+                    <a href="#" class="read-more">Read full post</a>
+                </div>
+                <div class="recent-item">
+                    <div class="title">A One-Page Reading Sheet</div>
+                    <a href="#" class="read-more">Read full post</a>
                 </div>
             </div>
         </div>
