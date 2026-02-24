@@ -27,12 +27,19 @@
         .sidebar-left {
             width: 220px;
         }
-        .avatar {
+        /* 修复头像显示的容器样式 */
+        .avatar-container {
             width: 100px;
             height: 100px;
             border-radius: 50%;
-            object-fit: cover;
+            overflow: hidden;
+            border: 1px solid #eee;
             margin-bottom: 15px;
+        }
+        .avatar {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
         h1 {
             font-size: 22px;
@@ -58,6 +65,9 @@
             display: flex;
             align-items: center;
             gap: 6px;
+        }
+        .contact-links a:hover {
+            color: #0969da; /* 鼠标悬浮变色，提升交互感 */
         }
         .contact-links img {
             width: 14px;
@@ -187,7 +197,10 @@
     <div class="container">
         <!-- 左侧个人信息 -->
         <div class="sidebar-left">
-            <img src="zjz.jpg" class="avatar" alt="Mohan Yang">
+            <!-- 修复头像容器，提升兼容性 -->
+            <div class="avatar-container">
+                <img src="zjz.jpg" class="avatar" alt="Mohan Yang">
+            </div>
             <h1>Mohan Yang</h1>
             <p class="bio">
                 I am Mohan Yang, a first-year graduate student at the College of Land Science and Technology, China Agricultural University. My research focuses on agricultural remote sensing, with a current focus on integrating 3D crop modeling and hyperspectral data analysis to advance the monitoring and management of sugar beet diseases. On this site, you'll find updates on my research projects, methodological notes and progress toward precision agriculture applications.
@@ -201,9 +214,10 @@
                     <img src="https://cdn-icons-png.flaticon.com/16/2985/2985168.png" alt="CV">
                     CV
                 </a>
-                <a href="mailto:mohan.yang@example.com">
+                <!-- 核心修改：添加正确的邮箱超链接 -->
+                <a href="mailto:yangmohan0106@gmail.com">
                     <img src="https://cdn-icons-png.flaticon.com/16/732/732200.png" alt="Email">
-                    Email
+                    yangmohan0106@gmail.com
                 </a>
                 <a href="https://github.com/mohanyang-hub">
                     <img src="https://cdn-icons-png.flaticon.com/16/25/25231.png" alt="GitHub">
