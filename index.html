@@ -8,31 +8,40 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: "Times New Roman", serif;
+            font-family: "Segoe UI", "Times New Roman", serif;
         }
         body {
-            color: #333;
-            line-height: 1.6;
-            max-width: 1200px;
-            margin: 40px auto;
-            padding: 0 20px;
-            background-color: #fff;
+            color: #2c3e50;
+            line-height: 1.7;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            background-color: #f8f9fa;
         }
+        /* 整体容器优化：调整列宽和间距，更协调 */
         .container {
             display: grid;
-            grid-template-columns: 220px 1fr 220px;
-            gap: 40px;
+            grid-template-columns: 280px 1fr 260px;
+            gap: 50px;
+            align-items: start;
         }
+        /* 左侧个人信息栏优化 */
         .sidebar-left {
-            width: 220px;
+            background-color: #ffffff;
+            padding: 30px 25px;
+            border-radius: 12px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 40px;
         }
+        /* 头像放大：从100px改为150px，更醒目 */
         .avatar-container {
-            width: 100px;
-            height: 100px;
+            width: 150px;
+            height: 150px;
             border-radius: 50%;
             overflow: hidden;
-            border: 1px solid #eee;
-            margin-bottom: 15px;
+            border: 3px solid #e9ecef;
+            margin: 0 auto 20px;
         }
         .avatar {
             width: 100%;
@@ -40,147 +49,210 @@
             object-fit: cover;
         }
         h1 {
-            font-size: 22px;
-            margin-bottom: 10px;
+            font-size: 24px;
+            margin-bottom: 15px;
             font-weight: 600;
+            text-align: center;
+            color: #1a202c;
         }
         .bio {
-            color: #555;
+            color: #4a5568;
             font-size: 14px;
-            margin-bottom: 25px;
+            margin-bottom: 30px;
             line-height: 1.7;
+            text-align: justify;
         }
+        /* 联系链接排版优化 */
         .contact-links {
             display: flex;
             flex-direction: column;
-            gap: 8px;
-            margin-bottom: 30px;
+            gap: 12px;
+            margin-bottom: 35px;
+            border-top: 1px solid #e9ecef;
+            padding-top: 20px;
         }
         .contact-links a {
-            color: #333;
+            color: #2d3748;
             text-decoration: none;
             font-size: 14px;
             display: flex;
             align-items: center;
-            gap: 6px;
+            gap: 10px;
+            padding: 6px 10px;
+            border-radius: 6px;
+            transition: all 0.2s ease;
         }
         .contact-links a:hover {
-            color: #0969da;
+            color: #2563eb;
+            background-color: #f1f5f9;
         }
         .contact-links img {
-            width: 14px;
-            height: 14px;
+            width: 16px;
+            height: 16px;
+            flex-shrink: 0;
         }
         .copyright {
             font-size: 12px;
-            color: #666;
-            margin-top: 30px;
+            color: #718096;
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #e9ecef;
         }
+        /* 中间主内容区优化 */
         .main-content {
-            flex-grow: 1;
+            background-color: #ffffff;
+            padding: 40px 35px;
+            border-radius: 12px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
         }
         .section {
-            margin-bottom: 35px;
+            margin-bottom: 45px;
+        }
+        .section:last-child {
+            margin-bottom: 0;
         }
         .section h2 {
-            font-size: 18px;
-            margin-bottom: 12px;
-            color: #222;
+            font-size: 20px;
+            margin-bottom: 20px;
+            color: #1a202c;
             font-weight: 600;
-            padding-bottom: 5px;
-            border-bottom: 1px solid #eee;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #e2e8f0;
+            position: relative;
+        }
+        .section h2::after {
+            content: "";
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 80px;
+            height: 2px;
+            background-color: #2563eb;
         }
         .item {
-            margin-bottom: 15px;
-            font-size: 14px;
-            line-height: 1.7;
+            margin-bottom: 20px;
+            font-size: 15px;
+            line-height: 1.8;
+        }
+        .item:last-child {
+            margin-bottom: 0;
         }
         .item a {
-            color: #0056b3;
+            color: #2563eb;
             text-decoration: none;
         }
         .item a:hover {
             text-decoration: underline;
         }
         .item .date {
-            color: #666;
+            color: #718096;
             font-size: 13px;
-            margin-right: 8px;
+            margin-right: 10px;
+            font-weight: 500;
+            display: inline-block;
+            min-width: 100px;
         }
         .item .title {
             font-weight: 500;
+            color: #1a202c;
         }
         .item .authors,
         .item .venue {
-            color: #555;
-            font-size: 13px;
+            color: #4a5568;
+            font-size: 14px;
+            margin-top: 4px;
+        }
+        .item .links {
+            margin-top: 8px;
         }
         .item .links a {
-            color: #0056b3;
-            font-size: 13px;
-            margin-right: 8px;
+            font-size: 14px;
+            margin-right: 12px;
         }
+        /* 研究项目卡片优化 */
         .projects-grid {
             display: grid;
             grid-template-columns: 1fr;
-            gap: 20px;
-            margin-top: 15px;
+            gap: 25px;
+            margin-top: 20px;
         }
         .project-card {
-            border: 1px solid #d0d7de;
-            border-radius: 8px;
-            padding: 18px;
+            border: 1px solid #e2e8f0;
+            border-radius: 10px;
+            padding: 22px;
             font-size: 14px;
-            line-height: 1.7;
-            background-color: #f6f8fa;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+            line-height: 1.8;
+            background-color: #f8fafc;
+            transition: box-shadow 0.2s ease;
+        }
+        .project-card:hover {
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
         }
         .project-card h3 {
             font-size: 16px;
-            margin-bottom: 12px;
-            color: #0550af;
+            margin-bottom: 15px;
+            color: #2563eb;
             font-weight: 600;
-            border-bottom: 1px solid #eaeef2;
-            padding-bottom: 8px;
+            line-height: 1.6;
         }
         .project-card ul {
-            margin-left: 22px;
-            margin-top: 8px;
-            color: #373e47;
+            margin-left: 20px;
+            margin-top: 10px;
+            color: #374151;
+        }
+        .project-card ul li {
+            margin-bottom: 6px;
         }
         .project-card .progress {
-            margin-top: 12px;
-            padding-top: 8px;
-            border-top: 1px solid #eaeef2;
-            color: #0969da;
+            margin-top: 15px;
+            padding-top: 12px;
+            border-top: 1px dashed #e2e8f0;
+            color: #2563eb;
             font-weight: 500;
             font-size: 14px;
         }
+        /* 右侧导航栏优化 */
         .sidebar-right {
-            width: 220px;
-            font-size: 13px;
+            background-color: #ffffff;
+            padding: 30px 25px;
+            border-radius: 12px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 40px;
         }
         .sidebar-right .nav-item {
-            margin-bottom: 8px;
+            margin-bottom: 10px;
+            font-size: 14px;
         }
         .sidebar-right .nav-item a {
-            color: #333;
+            color: #2d3748;
             text-decoration: none;
+            padding: 8px 10px;
+            display: block;
+            border-radius: 6px;
+            transition: all 0.2s ease;
         }
         .sidebar-right .nav-item a:hover {
-            text-decoration: underline;
+            color: #2563eb;
+            background-color: #f1f5f9;
+        }
+        .sidebar-right .recent-section {
+            margin-top: 35px;
+            border-top: 1px solid #e9ecef;
+            padding-top: 25px;
         }
         .sidebar-right .recent-item {
-            margin-bottom: 12px;
+            margin-bottom: 18px;
         }
         .sidebar-right .recent-item .title {
-            font-size: 13px;
-            color: #222;
-            margin-bottom: 4px;
+            font-size: 14px;
+            color: #1a202c;
+            margin-bottom: 6px;
+            font-weight: 500;
         }
         .sidebar-right .recent-item .read-more {
-            font-size: 12px;
-            color: #0056b3;
+            font-size: 13px;
+            color: #2563eb;
             text-decoration: none;
         }
         .sidebar-right .recent-item .read-more:hover {
@@ -190,6 +262,7 @@
 </head>
 <body>
     <div class="container">
+        <!-- 左侧个人信息（优化排版+放大头像） -->
         <div class="sidebar-left">
             <div class="avatar-container">
                 <img src="zjz.jpg" class="avatar" alt="Mohan Yang">
@@ -211,9 +284,10 @@
                     <img src="https://cdn-icons-png.flaticon.com/16/2985/2985168.png" alt="CV">
                     CV
                 </a>
+                <!-- 邮箱仅显示“Email”，隐藏完整地址，保留超链接功能 -->
                 <a href="mailto:yangmohan0106@gmail.com">
                     <img src="https://cdn-icons-png.flaticon.com/16/732/732200.png" alt="Email">
-                    yangmohan0106@gmail.com
+                    Email
                 </a>
                 <a href="https://github.com/mohanyang-hub">
                     <img src="https://cdn-icons-png.flaticon.com/16/25/25231.png" alt="GitHub">
@@ -225,6 +299,7 @@
             </div>
         </div>
 
+        <!-- 中间主内容区（优化间距+视觉层次） -->
         <div class="main-content">
             <div class="section">
                 <h2>Directory</h2>
@@ -247,21 +322,21 @@
                 <div class="item">
                     <span class="date">2026-02-24</span>
                     <span class="title">Reflection: A Small Beginning, A Long Journey Ahead</span>
-                    <p style="font-size: 13px; color: #555; margin-top: 4px;">
+                    <p style="font-size: 14px; color: #4a5568; margin-top: 8px;">
                         Today, I built my first personal website. This simple beginning marks a meaningful step in how I document research, questions, and intellectual growth.
                     </p>
                 </div>
                 <div class="item">
                     <span class="date">2026-01-22</span>
                     <span class="title">Postmortem: A Postmortem on a Failed Project</span>
-                    <p style="font-size: 13px; color: #555; margin-top: 4px;">
+                    <p style="font-size: 14px; color: #4a5568; margin-top: 8px;">
                         This project never shipped, but it clarified the importance of scope control, team coordination, and decision transparency.
                     </p>
                 </div>
                 <div class="item">
                     <span class="date">2025-12-30</span>
                     <span class="title">Notes: A One-Page Reading Sheet</span>
-                    <p style="font-size: 13px; color: #555; margin-top: 4px;">
+                    <p style="font-size: 14px; color: #4a5568; margin-top: 8px;">
                         I started using a one-page format for reading notes: one-sentence summary, three key insights, and one action item.
                     </p>
                 </div>
@@ -357,6 +432,7 @@
             </div>
         </div>
 
+        <!-- 右侧导航栏（优化样式+间距） -->
         <div class="sidebar-right">
             <div class="nav-item"><a href="#">Directory</a></div>
             <div class="nav-item"><a href="#">Blogs</a></div>
@@ -364,7 +440,7 @@
             <div class="nav-item"><a href="#">Research Projects</a></div>
             <div class="nav-item"><a href="#">Misc</a></div>
 
-            <div style="margin-top: 30px;">
+            <div class="recent-section">
                 <div class="recent-item">
                     <div class="title">Research Progress Update</div>
                     <a href="#" class="read-more">Read full post</a>
