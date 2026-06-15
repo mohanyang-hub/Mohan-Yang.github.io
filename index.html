@@ -14,6 +14,7 @@
       <div class="nav-links">
         <a href="#about">About</a>
         <a href="#research">Research</a>
+        <a href="#workflow">Workflow</a>
         <a href="#projects">Projects</a>
         <a href="#code">Code</a>
         <a href="#contact">Contact</a>
@@ -33,7 +34,14 @@
         </p>
         <div class="hero-actions">
           <a class="button primary" href="#projects">View Projects</a>
-          <a class="button" href="projects/helios-greenhouse/main.cpp">Helios Code</a>
+          <a class="button" href="#workflow">Research Workflow</a>
+        </div>
+        <div class="hero-tags" aria-label="Research keywords">
+          <span>Remote sensing</span>
+          <span>3D canopy</span>
+          <span>Plant disease</span>
+          <span>Radiative transfer</span>
+          <span>Microclimate</span>
         </div>
       </div>
       <aside class="profile-card">
@@ -42,6 +50,20 @@
         <p>Land Use and Information Technology</p>
         <p>College of Land Science and Technology</p>
         <p>China Agricultural University</p>
+        <div class="profile-stats">
+          <div>
+            <strong>2</strong>
+            <span>Research code projects</span>
+          </div>
+          <div>
+            <strong>4</strong>
+            <span>Core data streams</span>
+          </div>
+          <div>
+            <strong>3D</strong>
+            <span>Canopy-driven modeling</span>
+          </div>
+        </div>
       </aside>
     </section>
 
@@ -95,6 +117,35 @@
       </div>
     </section>
 
+    <section id="workflow" class="section">
+      <div class="section-heading">
+        <p class="eyebrow">Workflow</p>
+        <h2>From crop sensing to disease-risk visualization</h2>
+      </div>
+      <div class="workflow">
+        <article class="workflow-step">
+          <span>01</span>
+          <h3>Multi-source data</h3>
+          <p>RGB, multispectral, hyperspectral/SPAD, 3D mesh, and greenhouse microclimate observations.</p>
+        </article>
+        <article class="workflow-step">
+          <span>02</span>
+          <h3>Canopy structure</h3>
+          <p>Plant geometry and canopy arrangement are reconstructed or imported as scene-level model inputs.</p>
+        </article>
+        <article class="workflow-step">
+          <span>03</span>
+          <h3>Physical simulation</h3>
+          <p>Radiation, optical properties, leaf temperature, humidity, and wetness are linked with disease risk.</p>
+        </article>
+        <article class="workflow-step">
+          <span>04</span>
+          <h3>Visual output</h3>
+          <p>Per-primitive and image-level results are converted into interpretable maps, metrics, and project records.</p>
+        </article>
+      </div>
+    </section>
+
     <section id="projects" class="section">
       <div class="section-heading">
         <p class="eyebrow">Projects</p>
@@ -116,6 +167,21 @@
             <li>Outputs: PAR, leaf temperature, leaf humidity, wetness state, and disease-risk metrics.</li>
             <li>Visualization: Helios Visualizer pseudocolor rendering for per-primitive simulation results.</li>
           </ul>
+        </div>
+        <div class="project-visual helios-visual" aria-label="Helios greenhouse project visual summary">
+          <div class="greenhouse-frame">
+            <span class="roof"></span>
+            <span class="plant p1"></span>
+            <span class="plant p2"></span>
+            <span class="plant p3"></span>
+            <span class="plant p4"></span>
+          </div>
+          <div class="visual-metrics">
+            <span>PAR</span>
+            <span>Leaf temperature</span>
+            <span>Wetness</span>
+            <span>Disease risk</span>
+          </div>
         </div>
         <div class="project-links">
           <a class="button primary" href="projects/helios-greenhouse/main.cpp">main.cpp</a>
@@ -140,6 +206,24 @@
             <li>Sensor setup: 600 x 600 orthographic hyperspectral image simulation.</li>
             <li>Batch workflow: updates optical properties and runs one LESS simulation for each input file.</li>
           </ul>
+        </div>
+        <div class="project-visual less-visual" aria-label="LESS hyperspectral simulation visual summary">
+          <div class="spectrum-bars">
+            <span style="height: 34%"></span>
+            <span style="height: 48%"></span>
+            <span style="height: 42%"></span>
+            <span style="height: 62%"></span>
+            <span style="height: 78%"></span>
+            <span style="height: 70%"></span>
+            <span style="height: 88%"></span>
+            <span style="height: 82%"></span>
+          </div>
+          <div class="visual-metrics">
+            <span>400.50-899.50 nm</span>
+            <span>28 maize plants</span>
+            <span>600 x 600 image</span>
+            <span>Batch optical files</span>
+          </div>
         </div>
         <div class="project-links">
           <a class="button primary" href="projects/less-maize-canopy/zc-ort19.py">Python Code</a>
