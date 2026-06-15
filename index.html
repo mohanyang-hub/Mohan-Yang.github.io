@@ -1,460 +1,164 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Mohan Yang - Personal Homepage</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: "Segoe UI", "Times New Roman", serif;
-        }
-        body {
-            color: #2c3e50;
-            line-height: 1.7;
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 40px 20px;
-            background-color: #f8f9fa;
-        }
-        /* 整体容器优化：调整列宽和间距，更协调 */
-        .container {
-            display: grid;
-            grid-template-columns: 280px 1fr 260px;
-            gap: 50px;
-            align-items: start;
-        }
-        /* 左侧个人信息栏优化 */
-        .sidebar-left {
-            background-color: #ffffff;
-            padding: 30px 25px;
-            border-radius: 12px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-            position: sticky;
-            top: 40px;
-        }
-        /* 头像放大：从100px改为150px，更醒目 */
-        .avatar-container {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            overflow: hidden;
-            border: 3px solid #e9ecef;
-            margin: 0 auto 20px;
-        }
-        .avatar {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-        h1 {
-            font-size: 24px;
-            margin-bottom: 15px;
-            font-weight: 600;
-            text-align: center;
-            color: #1a202c;
-        }
-        .bio {
-            color: #4a5568;
-            font-size: 14px;
-            margin-bottom: 30px;
-            line-height: 1.7;
-            text-align: justify;
-        }
-        /* 联系链接排版优化 */
-        .contact-links {
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-            margin-bottom: 35px;
-            border-top: 1px solid #e9ecef;
-            padding-top: 20px;
-        }
-        .contact-links a {
-            color: #2d3748;
-            text-decoration: none;
-            font-size: 14px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            padding: 6px 10px;
-            border-radius: 6px;
-            transition: all 0.2s ease;
-        }
-        .contact-links a:hover {
-            color: #2563eb;
-            background-color: #f1f5f9;
-        }
-        .contact-links img {
-            width: 16px;
-            height: 16px;
-            flex-shrink: 0;
-        }
-        .copyright {
-            font-size: 12px;
-            color: #718096;
-            text-align: center;
-            padding-top: 20px;
-            border-top: 1px solid #e9ecef;
-        }
-        /* 中间主内容区优化 */
-        .main-content {
-            background-color: #ffffff;
-            padding: 40px 35px;
-            border-radius: 12px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-        }
-        .section {
-            margin-bottom: 45px;
-        }
-        .section:last-child {
-            margin-bottom: 0;
-        }
-        .section h2 {
-            font-size: 20px;
-            margin-bottom: 20px;
-            color: #1a202c;
-            font-weight: 600;
-            padding-bottom: 10px;
-            border-bottom: 2px solid #e2e8f0;
-            position: relative;
-        }
-        .section h2::after {
-            content: "";
-            position: absolute;
-            bottom: -2px;
-            left: 0;
-            width: 80px;
-            height: 2px;
-            background-color: #2563eb;
-        }
-        .item {
-            margin-bottom: 20px;
-            font-size: 15px;
-            line-height: 1.8;
-        }
-        .item:last-child {
-            margin-bottom: 0;
-        }
-        .item a {
-            color: #2563eb;
-            text-decoration: none;
-        }
-        .item a:hover {
-            text-decoration: underline;
-        }
-        .item .date {
-            color: #718096;
-            font-size: 13px;
-            margin-right: 10px;
-            font-weight: 500;
-            display: inline-block;
-            min-width: 100px;
-        }
-        .item .title {
-            font-weight: 500;
-            color: #1a202c;
-        }
-        .item .authors,
-        .item .venue {
-            color: #4a5568;
-            font-size: 14px;
-            margin-top: 4px;
-        }
-        .item .links {
-            margin-top: 8px;
-        }
-        .item .links a {
-            font-size: 14px;
-            margin-right: 12px;
-        }
-        /* 研究项目卡片优化 */
-        .projects-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 25px;
-            margin-top: 20px;
-        }
-        .project-card {
-            border: 1px solid #e2e8f0;
-            border-radius: 10px;
-            padding: 22px;
-            font-size: 14px;
-            line-height: 1.8;
-            background-color: #f8fafc;
-            transition: box-shadow 0.2s ease;
-        }
-        .project-card:hover {
-            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-        }
-        .project-card h3 {
-            font-size: 16px;
-            margin-bottom: 15px;
-            color: #2563eb;
-            font-weight: 600;
-            line-height: 1.6;
-        }
-        .project-card ul {
-            margin-left: 20px;
-            margin-top: 10px;
-            color: #374151;
-        }
-        .project-card ul li {
-            margin-bottom: 6px;
-        }
-        .project-card .progress {
-            margin-top: 15px;
-            padding-top: 12px;
-            border-top: 1px dashed #e2e8f0;
-            color: #2563eb;
-            font-weight: 500;
-            font-size: 14px;
-        }
-        /* 右侧导航栏优化 */
-        .sidebar-right {
-            background-color: #ffffff;
-            padding: 30px 25px;
-            border-radius: 12px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-            position: sticky;
-            top: 40px;
-        }
-        .sidebar-right .nav-item {
-            margin-bottom: 10px;
-            font-size: 14px;
-        }
-        .sidebar-right .nav-item a {
-            color: #2d3748;
-            text-decoration: none;
-            padding: 8px 10px;
-            display: block;
-            border-radius: 6px;
-            transition: all 0.2s ease;
-        }
-        .sidebar-right .nav-item a:hover {
-            color: #2563eb;
-            background-color: #f1f5f9;
-        }
-        .sidebar-right .recent-section {
-            margin-top: 35px;
-            border-top: 1px solid #e9ecef;
-            padding-top: 25px;
-        }
-        .sidebar-right .recent-item {
-            margin-bottom: 18px;
-        }
-        .sidebar-right .recent-item .title {
-            font-size: 14px;
-            color: #1a202c;
-            margin-bottom: 6px;
-            font-weight: 500;
-        }
-        .sidebar-right .recent-item .read-more {
-            font-size: 13px;
-            color: #2563eb;
-            text-decoration: none;
-        }
-        .sidebar-right .recent-item .read-more:hover {
-            text-decoration: underline;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mohan Yang | Agricultural Remote Sensing & 3D Crop Modeling</title>
+  <meta name="description" content="Personal academic homepage of Mohan Yang, focusing on agricultural remote sensing, 3D crop modeling, crop disease monitoring, and greenhouse microclimate simulation.">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container">
-        <!-- 左侧个人信息（优化排版+放大头像） -->
-        <div class="sidebar-left">
-            <div class="avatar-container">
-                <img src="zjz.jpg" class="avatar" alt="Mohan Yang">
-            </div>
-            <h1>Mohan Yang</h1>
-            <p class="bio">
-                I am Mohan Yang, a first-year graduate student at the College of Land Science and Technology, China Agricultural University. My research focuses on agricultural remote sensing, with a current focus on integrating 3D crop modeling and hyperspectral data analysis to advance the monitoring and management of sugar beet diseases. On this site, you'll find updates on my research projects, methodological notes and progress toward precision agriculture applications.
-            </p>
-            <div class="contact-links">
-                <a href="https://scholar.google.com">
-                    <img src="https://cdn-icons-png.flaticon.com/16/565/565284.png" alt="Google Scholar">
-                    Google Scholar
-                </a>
-                <a href="https://www.researchgate.net/profile/Mohan-Yang-11?ev=hdr_xprf">
-                    <img src="https://cdn-icons-png.flaticon.com/16/732/732210.png" alt="ResearchGate">
-                    ResearchGate
-                </a>
-                <a href="CV.docx">
-                    <img src="https://cdn-icons-png.flaticon.com/16/2985/2985168.png" alt="CV">
-                    CV
-                </a>
-                <!-- 邮箱仅显示“Email”，隐藏完整地址，保留超链接功能 -->
-                <a href="mailto:yangmohan0106@gmail.com">
-                    <img src="https://cdn-icons-png.flaticon.com/16/732/732200.png" alt="Email">
-                    Email
-                </a>
-                <a href="https://github.com/mohanyang-hub">
-                    <img src="https://cdn-icons-png.flaticon.com/16/25/25231.png" alt="GitHub">
-                    GitHub
-                </a>
-            </div>
-            <div class="copyright">
-                &copy; 2026 Mohan Yang. All rights reserved.
-            </div>
+  <header class="site-header">
+    <nav class="nav">
+      <a class="brand" href="#top">Mohan Yang</a>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#research">Research</a>
+        <a href="#projects">Projects</a>
+        <a href="#code">Code</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero section">
+      <div class="hero-text">
+        <p class="eyebrow">China Agricultural University</p>
+        <h1>Agricultural remote sensing, 3D crop modeling, and disease-risk simulation.</h1>
+        <p class="lead">
+          I am a graduate student in Land Use and Information Technology at the College of Land Science and Technology,
+          China Agricultural University. My work focuses on multi-source crop sensing, 3D canopy reconstruction,
+          disease monitoring, and greenhouse microenvironment modeling.
+        </p>
+        <div class="hero-actions">
+          <a class="button primary" href="#projects">View Projects</a>
+          <a class="button" href="projects/helios-greenhouse/main.cpp">Helios Code</a>
         </div>
+      </div>
+      <aside class="profile-card">
+        <img class="avatar photo" src="zjz.jpg" alt="Mohan Yang portrait">
+        <h2>Mohan Yang</h2>
+        <p>Master's Student, 2025 Cohort</p>
+        <p>Land Use and Information Technology</p>
+        <p>College of Land Science and Technology</p>
+        <a class="button full" href="CV.docx">Download CV</a>
+      </aside>
+    </section>
 
-        <!-- 中间主内容区（优化间距+视觉层次） -->
-        <div class="main-content">
-            <div class="section">
-                <h2>Directory</h2>
-                <div class="item">
-                    <span class="date">2026-02-24</span>
-                    <span class="title">Research Progress Update</span>
-                </div>
-                <div class="item">
-                    <span class="date">2026-01-22</span>
-                    <span class="title">3D Radiative Transfer Model Building Notes</span>
-                </div>
-                <div class="item">
-                    <span class="date">2025-12-30</span>
-                    <span class="title">Hyperspectral Data Preprocessing Methods</span>
-                </div>
-            </div>
+    <section id="about" class="section">
+      <div class="section-heading">
+        <p class="eyebrow">About</p>
+        <h2>Profile</h2>
+      </div>
+      <div class="content-grid">
+        <p>
+          My research interests lie at the intersection of agricultural remote sensing, crop phenotyping,
+          3D scene reconstruction, and process-based simulation. I am particularly interested in how canopy
+          structure, spectral response, microclimate, and disease development can be integrated to support
+          precise crop monitoring and early warning.
+        </p>
+        <p>
+          Current work includes cucumber downy mildew monitoring in greenhouse environments and sugar beet
+          Cercospora leaf spot analysis using multi-source observations, including RGB imagery, multispectral
+          data, hyperspectral/SPAD measurements, 3D canopy structure, and environmental variables.
+        </p>
+      </div>
+    </section>
 
-            <div class="section">
-                <h2>Blogs</h2>
-                <div class="item">
-                    <span class="date">2026-02-24</span>
-                    <span class="title">Reflection: A Small Beginning, A Long Journey Ahead</span>
-                    <p style="font-size: 14px; color: #4a5568; margin-top: 8px;">
-                        Today, I built my first personal website. This simple beginning marks a meaningful step in how I document research, questions, and intellectual growth.
-                    </p>
-                </div>
-                <div class="item">
-                    <span class="date">2026-01-22</span>
-                    <span class="title">Postmortem: A Postmortem on a Failed Project</span>
-                    <p style="font-size: 14px; color: #4a5568; margin-top: 8px;">
-                        This project never shipped, but it clarified the importance of scope control, team coordination, and decision transparency.
-                    </p>
-                </div>
-                <div class="item">
-                    <span class="date">2025-12-30</span>
-                    <span class="title">Notes: A One-Page Reading Sheet</span>
-                    <p style="font-size: 14px; color: #4a5568; margin-top: 8px;">
-                        I started using a one-page format for reading notes: one-sentence summary, three key insights, and one action item.
-                    </p>
-                </div>
-            </div>
+    <section id="research" class="section tinted">
+      <div class="section-heading">
+        <p class="eyebrow">Research</p>
+        <h2>Research Directions</h2>
+      </div>
+      <div class="cards">
+        <article class="card">
+          <h3>Multi-source disease data acquisition</h3>
+          <p>
+            Building standardized datasets for different disease stages, cultivars, and growth periods by combining
+            3D structure, spectral imagery, microclimate, physiological parameters, and manual disease assessments.
+          </p>
+        </article>
+        <article class="card">
+          <h3>3D multimodal disease monitoring</h3>
+          <p>
+            Fusing hyperspectral/SPAD observations, UAV or proximal multispectral imagery, RGB texture features,
+            and 3D canopy parameters to identify disease severity at plant and canopy scales.
+          </p>
+        </article>
+        <article class="card">
+          <h3>Canopy microenvironment risk prediction</h3>
+          <p>
+            Coupling realistic canopy structure with radiation, leaf temperature, humidity, and leaf wetness duration
+            to quantify disease-risk patterns in greenhouse crop systems.
+          </p>
+        </article>
+      </div>
+    </section>
 
-            <div class="section">
-                <h2>Publications</h2>
-                <div class="item">
-                    <div class="title">1. A robust two-stage framework for maize above-ground biomass prediction integrating spectral remote sensing and allometric growth model</div>
-                    <div class="authors">Mohan Yang*, Qiang Wu*, Jianbo Qi, Guijun Yang, Zanpu Wang, Zhenyu Wang, Jun Zhang, Hao Yang, Jinpeng Cheng, Shuping Xiong, Xinming Ma. (*Co-first author)</div>
-                    <div class="venue">Computers and Electronics in Agriculture, 2025, 235: 110398.</div>
-                    <div class="links">
-                        <a href="#">webpage</a>
-                        <a href="#">pdf</a>
-                        <a href="#">abstract</a>
-                        <a href="#">code</a>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="title">2. Accurate Estimation of Maize Above Ground Biomass Using Integrated Multispectral and LiDAR Data</div>
-                    <div class="authors">Qiang Wu, Mohan Yang, Fenghui Duan, Zanpu Wang, Jiakun Kang, Hao Yang, Guijun Yang, Zhiyong Zhang, Xinming Ma, Jinpeng Cheng.</div>
-                    <div class="venue">Spectroscopy and Spectral Analysis, 2025,45(10):2906-2914.</div>
-                    <div class="links">
-                        <a href="#">webpage</a>
-                        <a href="#">pdf</a>
-                        <a href="#">abstract</a>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="title">3. Enhanced crop leaf area index estimation via random forest regression: Bayesian optimization and feature selection approach</div>
-                    <div class="authors">Jun Zhang, Jinpeng Cheng, Cuiping Liu, Qiang Wu, Shuping Xiong, Hao Yang, Shenglong Chang, Yuanyuan Fu, Mohan Yang, Shiyu Zhang, Guijun Yang, Xinming Ma.</div>
-                    <div class="venue">Remote Sensing. 2024, 16(21): 3917.</div>
-                    <div class="links">
-                        <a href="#">webpage</a>
-                        <a href="#">pdf</a>
-                        <a href="#">abstract</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="section">
-                <h2>Research Projects (Future Plan)</h2>
-                <div class="projects-grid">
-                    <div class="project-card">
-                        <h3>Research 1: Attention-enhanced knowledge distillation for cross-scale multi-modal sugar beet disease grade classification</h3>
-                        <ul>
-                            <li>Data training completed</li>
-                            <li>Model standardized training completed</li>
-                            <li>Chart visualization standardized, draft writing completed</li>
-                        </ul>
-                        <div class="progress">Experiment progress: 90%</div>
-                    </div>
-                    <div class="project-card">
-                        <h3>Research 2: Sugar beet leaf chlorophyll content inversion and disease grading based on transfer learning and 3D radiative transfer model</h3>
-                        <ul>
-                            <li>All simulation data completed (SDK batch processing)</li>
-                            <li>Algorithm training in progress</li>
-                        </ul>
-                        <div class="progress">Experiment progress: 70%</div>
-                    </div>
-                    <div class="project-card">
-                        <h3>Research 3: Integrated study on 3D canopy radiation-heat-moisture coupling prediction model for crop diseases (Focus on precise monitoring and prediction of cucumber downy mildew in greenhouses)</h3>
-                        <ul>
-                            <li>Sensor deployment completed, partial data preliminary processing</li>
-                            <li>Helios model building completed</li>
-                        </ul>
-                        <div class="progress">Experiment progress: 30%</div>
-                    </div>
-                    <div class="project-card">
-                        <h3>Research 4: Prediction of spatio-temporal infection probability of sugar beet brown spot disease based on 3D radiation-temperature distribution and canopy humidity continuous model</h3>
-                        <ul>
-                            <li>Experimental plan initially planned</li>
-                            <li>Helios model building completed</li>
-                            <li>Experiment to be carried out in April 2026</li>
-                        </ul>
-                        <div class="progress">Experiment progress: Planning stage</div>
-                    </div>
-                    <div class="project-card">
-                        <h3>Research 5: Crop disease monitoring and prediction: A review of application progress of multi-modal cross-scale modeling, 3D radiation models and intelligent algorithms</h3>
-                        <ul>
-                            <li>Review writing to be carried out in October 2026</li>
-                        </ul>
-                        <div class="progress">Experiment progress: Planning stage</div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="section">
-                <h2>Misc (Awards & Honors)</h2>
-                <div class="item">
-                    College Students’ Extracurricular Academic and Scientific Works Competition - Henan Provincial Special Prize (top 0.75%) | 2025
-                </div>
-            </div>
+    <section id="projects" class="section">
+      <div class="section-heading">
+        <p class="eyebrow">Projects</p>
+        <h2>Selected Work</h2>
+      </div>
+      <article class="project">
+        <div>
+          <p class="project-label">Helios / C++ / Greenhouse simulation</p>
+          <h3>Greenhouse cucumber canopy microclimate and disease-risk simulation</h3>
+          <p>
+            This project loads cucumber canopy meshes, greenhouse wall and roof PLY files, assigns optical properties
+            for greenhouse structures, and simulates radiation, leaf temperature, leaf relative humidity, wetness state,
+            and daily disease-risk indicators. The workflow uses Helios plugins including radiation, energy balance,
+            solar position, visualization, photosynthesis, stomatal conductance, and plant hydraulics.
+          </p>
+          <ul class="project-list">
+            <li>Input geometry: cucumber canopy, greenhouse wall, and greenhouse roof PLY files.</li>
+            <li>Structure parameters: PAR reflectivity, PAR transmissivity, and longwave emissivity.</li>
+            <li>Outputs: PAR, leaf temperature, leaf humidity, wetness state, and disease-risk metrics.</li>
+            <li>Visualization: Helios Visualizer pseudocolor rendering for per-primitive simulation results.</li>
+          </ul>
         </div>
-
-        <!-- 右侧导航栏（优化样式+间距） -->
-        <div class="sidebar-right">
-            <div class="nav-item"><a href="#">Directory</a></div>
-            <div class="nav-item"><a href="#">Blogs</a></div>
-            <div class="nav-item"><a href="#">Publications</a></div>
-            <div class="nav-item"><a href="#">Research Projects</a></div>
-            <div class="nav-item"><a href="#">Misc</a></div>
-
-            <div class="recent-section">
-                <div class="recent-item">
-                    <div class="title">Research Progress Update</div>
-                    <a href="#" class="read-more">Read full post</a>
-                </div>
-                <div class="recent-item">
-                    <div class="title">3D Radiative Transfer Model Building Notes</div>
-                    <a href="#" class="read-more">Read full post</a>
-                </div>
-                <div class="recent-item">
-                    <div class="title">Hyperspectral Data Preprocessing Methods</div>
-                    <a href="#" class="read-more">Read full post</a>
-                </div>
-            </div>
+        <div class="project-links">
+          <a class="button primary" href="projects/helios-greenhouse/main.cpp">main.cpp</a>
+          <a class="button" href="projects/helios-greenhouse/CMakeLists.txt">CMakeLists.txt</a>
+          <a class="button" href="projects/helios-greenhouse/">Project Folder</a>
         </div>
-    </div>
+      </article>
+    </section>
+
+    <section id="code" class="section tinted">
+      <div class="section-heading">
+        <p class="eyebrow">Code</p>
+        <h2>Repository Notes</h2>
+      </div>
+      <div class="content-grid">
+        <p>
+          The first uploaded project code is placed under <code>projects/helios-greenhouse/</code>. It is intended
+          as a research-code record for the personal homepage. The code is not executed by GitHub Pages; it is linked
+          as source material and documentation for the project.
+        </p>
+        <p>
+          Additional research code can be added later as independent project folders, each with its own README,
+          source files, datasets description, and representative figures.
+        </p>
+      </div>
+    </section>
+
+    <section id="contact" class="section">
+      <div class="section-heading">
+        <p class="eyebrow">Contact</p>
+        <h2>Get in Touch</h2>
+      </div>
+      <div class="contact-box">
+        <p>GitHub: <a href="https://github.com/mohanyang-hub">mohanyang-hub</a></p>
+        <p>Homepage repository: <a href="https://github.com/mohanyang-hub/Mohan-Yang.github.io">Mohan-Yang.github.io</a></p>
+        <p>Affiliation: College of Land Science and Technology, China Agricultural University</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>© 2026 Mohan Yang. Built with GitHub Pages.</p>
+  </footer>
 </body>
 </html>
