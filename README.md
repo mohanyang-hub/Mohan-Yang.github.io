@@ -7,13 +7,16 @@ Research interests include:
 - Agricultural remote sensing
 - 3D crop modeling and canopy reconstruction
 - Crop disease monitoring
+- Crop radiative transfer simulation
 - Greenhouse microclimate and disease-risk simulation
 - Multi-source phenotyping data fusion
 
-The first project code is placed in:
+Project code is placed in:
 
 ```text
 projects/helios-greenhouse/
+projects/less-maize-canopy/
 ```
 
-It contains a Helios-based C++ workflow for greenhouse cucumber canopy simulation and visualization.
+- `projects/helios-greenhouse/` contains a Helios-based C++ workflow for greenhouse cucumber canopy simulation and visualization.
+- `projects/less-maize-canopy/` contains a LESS/pyLessSDK Python workflow for maize canopy hyperspectral radiative transfer simulation.
