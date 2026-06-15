@@ -140,36 +140,13 @@ a:hover {
 }
 
 .profile-card h2 {
-  margin: 16px 0 10px;
+  margin: 0 0 10px;
   font-size: 26px;
 }
 
 .profile-card p {
   margin: 6px 0;
   color: var(--muted);
-}
-
-.avatar {
-  width: 86px;
-  height: 86px;
-  display: grid;
-  place-items: center;
-  border-radius: 50%;
-  color: #ffffff;
-  background: linear-gradient(135deg, var(--accent), #5f947f);
-  font-size: 28px;
-  font-weight: 800;
-}
-
-.avatar.photo {
-  object-fit: cover;
-  border: 3px solid var(--accent-soft);
-  background: var(--accent-soft);
-}
-
-.button.full {
-  width: 100%;
-  margin-top: 18px;
 }
 
 .tinted {

@@ -11,12 +11,16 @@ Research interests include:
 - Greenhouse microclimate and disease-risk simulation
 - Multi-source phenotyping data fusion
 
-Project code is placed in:
+Repository layout:
 
 ```text
+index.html
+styles.css
+README.md
 projects/helios-greenhouse/
 projects/less-maize-canopy/
 ```
 
+- `index.html` and `styles.css` define the GitHub Pages homepage.
 - `projects/helios-greenhouse/` contains a Helios-based C++ workflow for greenhouse cucumber canopy simulation and visualization.
 - `projects/less-maize-canopy/` contains a LESS/pyLessSDK Python workflow for maize canopy hyperspectral radiative transfer simulation.
