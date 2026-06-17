@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mohan Yang | Agricultural Remote Sensing & 3D Crop Modeling</title>
-  <meta name="description" content="Personal academic homepage of Mohan Yang, focusing on agricultural remote sensing, 3D crop modeling, crop disease monitoring, crop radiative transfer, and greenhouse microclimate simulation.">
+  <meta name="description" content="Personal academic homepage of Mohan Yang, focusing on agricultural remote sensing, 3D crop modeling, multi-source disease monitoring, crop radiative transfer, and greenhouse microclimate simulation.">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -26,7 +26,7 @@
     <section class="hero section">
       <div class="hero-text">
         <p class="eyebrow">China Agricultural University</p>
-        <h1>Agricultural remote sensing, 3D crop modeling, and disease-risk simulation.</h1>
+        <h1>Agricultural remote sensing, 3D crop modeling, and multi-source disease analysis.</h1>
         <p class="lead">
           I am a graduate student in Land Use and Information Technology at the College of Land Science and Technology,
           China Agricultural University. My work focuses on multi-source crop sensing, 3D canopy reconstruction,
@@ -41,7 +41,7 @@
           <span>3D canopy</span>
           <span>Plant disease</span>
           <span>Radiative transfer</span>
-          <span>Microclimate</span>
+          <span>Multimodal fusion</span>
         </div>
       </div>
       <aside class="profile-card">
@@ -52,16 +52,16 @@
         <p>China Agricultural University</p>
         <div class="profile-stats">
           <div>
-            <strong>2</strong>
-            <span>Research code projects</span>
+            <strong>3</strong>
+            <span>Core research projects</span>
           </div>
           <div>
-            <strong>4</strong>
-            <span>Core data streams</span>
+            <strong>Multi</strong>
+            <span>Source sensing and simulation workflows</span>
           </div>
           <div>
             <strong>3D</strong>
-            <span>Canopy-driven modeling</span>
+            <span>Canopy-driven modeling and analysis</span>
           </div>
         </div>
       </aside>
@@ -80,9 +80,8 @@
           precise crop monitoring and early warning.
         </p>
         <p>
-          Current work includes cucumber downy mildew monitoring in greenhouse environments and sugar beet
-          Cercospora leaf spot analysis using multi-source observations, including RGB imagery, multispectral
-          data, hyperspectral/SPAD measurements, 3D canopy structure, and environmental variables.
+          Current work includes multi-source disease severity assessment, canopy radiative transfer simulation,
+          and three-dimensional environmental modeling for agricultural sensing and interpretation.
         </p>
       </div>
     </section>
@@ -96,22 +95,22 @@
         <article class="card">
           <h3>Multi-source disease data acquisition</h3>
           <p>
-            Building standardized datasets for different disease stages, cultivars, and growth periods by combining
-            3D structure, spectral imagery, microclimate, physiological parameters, and manual disease assessments.
+            Building standardized plant-centered datasets by combining spectral imagery, physiological observations,
+            canopy structure, and disease annotations across multiple sensing scales.
           </p>
         </article>
         <article class="card">
-          <h3>3D multimodal disease monitoring</h3>
+          <h3>Cross-scale multimodal disease monitoring</h3>
           <p>
-            Fusing hyperspectral/SPAD observations, UAV or proximal multispectral imagery, RGB texture features,
-            and 3D canopy parameters to identify disease severity at plant and canopy scales.
+            Fusing hyperspectral, SPAD, UAV canopy imagery, texture features, and 3D traits to support robust disease
+            severity assessment and interpretation.
           </p>
         </article>
         <article class="card">
-          <h3>Canopy microenvironment risk prediction</h3>
+          <h3>Simulation-supported crop analysis</h3>
           <p>
-            Coupling realistic canopy structure with radiation, leaf temperature, humidity, and leaf wetness duration
-            to quantify disease-risk patterns in greenhouse crop systems.
+            Combining 3D canopy modeling, radiative transfer, and environmental simulation to improve agricultural
+            monitoring, inversion, and disease-related process analysis.
           </p>
         </article>
       </div>
@@ -120,13 +119,13 @@
     <section id="workflow" class="section">
       <div class="section-heading">
         <p class="eyebrow">Workflow</p>
-        <h2>From crop sensing to disease-risk visualization</h2>
+        <h2>From crop sensing to interpretable project outputs</h2>
       </div>
       <div class="workflow">
         <article class="workflow-step">
           <span>01</span>
           <h3>Multi-source data</h3>
-          <p>RGB, multispectral, hyperspectral/SPAD, 3D mesh, and greenhouse microclimate observations.</p>
+          <p>RGB, multispectral, hyperspectral/SPAD, 3D structure, and environmental observations.</p>
         </article>
         <article class="workflow-step">
           <span>02</span>
@@ -135,13 +134,13 @@
         </article>
         <article class="workflow-step">
           <span>03</span>
-          <h3>Physical simulation</h3>
-          <p>Radiation, optical properties, leaf temperature, humidity, and wetness are linked with disease risk.</p>
+          <h3>Modeling and simulation</h3>
+          <p>Fusion learning, radiative transfer, and environmental processes are linked with crop analysis tasks.</p>
         </article>
         <article class="workflow-step">
           <span>04</span>
           <h3>Visual output</h3>
-          <p>Per-primitive and image-level results are converted into interpretable maps, metrics, and project records.</p>
+          <p>Scene-level results, project records, and interpretable visual summaries are generated for analysis.</p>
         </article>
       </div>
     </section>
@@ -151,21 +150,21 @@
         <p class="eyebrow">Projects</p>
         <h2>Selected Work</h2>
       </div>
+
       <article class="project">
         <div>
           <p class="project-label">Helios / C++ / Greenhouse simulation</p>
-          <h3>Greenhouse cucumber canopy microclimate and disease-risk simulation</h3>
+          <h3>3D environmental simulation and analysis in CLion</h3>
           <p>
-            This project loads cucumber canopy meshes, greenhouse wall and roof PLY files, assigns optical properties
-            for greenhouse structures, and simulates radiation, leaf temperature, leaf relative humidity, wetness state,
-            and daily disease-risk indicators. The workflow uses Helios plugins including radiation, energy balance,
-            solar position, visualization, photosynthesis, stomatal conductance, and plant hydraulics.
+            This project builds greenhouse-scale 3D environmental simulation workflows in C++ for canopy analysis,
+            with emphasis on scene construction, radiation-related processes, and disease-relevant environmental
+            interpretation in controlled crop systems.
           </p>
           <ul class="project-list">
-            <li>Input geometry: cucumber canopy, greenhouse wall, and greenhouse roof PLY files.</li>
-            <li>Structure parameters: PAR reflectivity, PAR transmissivity, and longwave emissivity.</li>
-            <li>Outputs: PAR, leaf temperature, leaf humidity, wetness state, and disease-risk metrics.</li>
-            <li>Visualization: Helios Visualizer pseudocolor rendering for per-primitive simulation results.</li>
+            <li>Input geometry: canopy, greenhouse wall, and roof scene files.</li>
+            <li>Core tasks: scene construction, environmental process simulation, and per-primitive analysis.</li>
+            <li>Outputs: interpretable scene-level variables for crop and disease-related analysis.</li>
+            <li>Implementation: CLion-based C++ project with modular simulation workflow.</li>
           </ul>
         </div>
         <div class="project-visual helios-visual" aria-label="Helios greenhouse project visual summary">
@@ -177,10 +176,10 @@
             <span class="plant p4"></span>
           </div>
           <div class="visual-metrics">
-            <span>PAR</span>
-            <span>Leaf temperature</span>
-            <span>Wetness</span>
-            <span>Disease risk</span>
+            <span>Scene modeling</span>
+            <span>Radiation</span>
+            <span>Environment</span>
+            <span>3D analysis</span>
           </div>
         </div>
         <div class="project-links">
@@ -193,18 +192,17 @@
       <article class="project">
         <div>
           <p class="project-label">LESS / Python / Hyperspectral simulation</p>
-          <h3>Maize canopy hyperspectral radiative transfer simulation</h3>
+          <h3>LESS-based canopy radiative transfer simulation</h3>
           <p>
-            This project uses LESS and pyLessSDK to construct a maize canopy scene and run batch hyperspectral
-            radiative transfer simulations. The script imports maize stem and leaf OBJ files, places 28 crop
-            instances in a structured canopy layout, assigns soil and leaf optical properties, and configures an
-            orthographic spectral sensor from 400.50 nm to 899.50 nm.
+            This project uses LESS and pyLessSDK to construct canopy scenes and run hyperspectral radiative transfer
+            simulation, supporting crop trait inversion, physiological interpretation, and simulation-driven remote
+            sensing analysis.
           </p>
           <ul class="project-list">
-            <li>Input data: maize stem and leaf OBJ geometry plus optical-property text files.</li>
-            <li>Scene design: regular maize canopy placement with object rotation for structural variation.</li>
-            <li>Sensor setup: 600 x 600 orthographic hyperspectral image simulation.</li>
-            <li>Batch workflow: updates optical properties and runs one LESS simulation for each input file.</li>
+            <li>Input data: canopy geometry and optical-property files.</li>
+            <li>Scene design: structured canopy placement with object-level variation.</li>
+            <li>Sensor setup: orthographic hyperspectral image simulation across visible and near-infrared bands.</li>
+            <li>Batch workflow: automated updates of optical inputs and repeated LESS simulation runs.</li>
           </ul>
         </div>
         <div class="project-visual less-visual" aria-label="LESS hyperspectral simulation visual summary">
@@ -219,16 +217,54 @@
             <span style="height: 82%"></span>
           </div>
           <div class="visual-metrics">
-            <span>400.50-899.50 nm</span>
-            <span>28 maize plants</span>
-            <span>600 x 600 image</span>
-            <span>Batch optical files</span>
+            <span>Hyperspectral</span>
+            <span>Canopy scene</span>
+            <span>LESS</span>
+            <span>Batch simulation</span>
           </div>
         </div>
         <div class="project-links">
           <a class="button primary" href="projects/less-maize-canopy/zc-ort19.py">Python Code</a>
           <a class="button" href="projects/less-maize-canopy/README.md">Project README</a>
           <a class="button" href="projects/less-maize-canopy/">Project Folder</a>
+        </div>
+      </article>
+
+      <article class="project">
+        <div>
+          <p class="project-label">Multi-source sensing / Disease grading</p>
+          <h3>Multi-source disease severity grading</h3>
+          <p>
+            This project integrates spectral, physiological, canopy image, and structural observations for disease
+            severity assessment under heterogeneous field conditions. The work emphasizes plant-centered alignment,
+            multimodal fusion, and interpretable severity grading.
+          </p>
+          <ul class="project-list">
+            <li>Data sources: hyperspectral, SPAD, UAV canopy sensing, false-color imagery, and 3D structure.</li>
+            <li>Core tasks: multi-source feature construction, fusion modeling, and severity grading.</li>
+            <li>Focus: robust disease assessment with cross-scale complementary information.</li>
+            <li>Presentation: simplified project summary on the homepage without exposing full parameter-heavy experiment logs.</li>
+          </ul>
+        </div>
+        <div class="project-visual multisource-visual" aria-label="Multi-source disease grading visual summary">
+          <div class="multisource-grid">
+            <span class="ms-card">HSI</span>
+            <span class="ms-card">SPAD</span>
+            <span class="ms-card">UAV</span>
+            <span class="ms-card">RGB</span>
+            <span class="ms-card">3D</span>
+            <span class="ms-card">Fusion</span>
+          </div>
+          <div class="visual-metrics">
+            <span>Plant-centered</span>
+            <span>Multimodal</span>
+            <span>Severity grading</span>
+            <span>Interpretation</span>
+          </div>
+        </div>
+        <div class="project-links">
+          <a class="button primary" href="https://github.com/mohanyang-hub/Mohan-Yang.github.io">Homepage Repo</a>
+          <a class="button" href="#research">Research Directions</a>
         </div>
       </article>
     </section>
@@ -240,14 +276,13 @@
       </div>
       <div class="content-grid">
         <p>
-          Uploaded research code is organized under <code>projects/</code>. The Helios greenhouse simulation code is
-          placed under <code>projects/helios-greenhouse/</code>, and the LESS maize canopy simulation code is placed
-          under <code>projects/less-maize-canopy/</code>. The code is not executed by GitHub Pages; it is linked as
-          source material and documentation for each project.
+          Uploaded research code is organized under <code>projects/</code>. The CLion-based 3D environmental simulation
+          code is placed under <code>projects/helios-greenhouse/</code>, and the LESS canopy radiative transfer workflow
+          is placed under <code>projects/less-maize-canopy/</code>.
         </p>
         <p>
-          Additional research code can be added later as independent project folders, each with its own README,
-          source files, datasets description, and representative figures.
+          The multi-source disease grading work is currently summarized on the homepage as a compact project description.
+          Additional standalone repositories can be linked later as the code structure is separated and cleaned.
         </p>
       </div>
     </section>

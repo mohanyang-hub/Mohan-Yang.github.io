@@ -426,6 +426,26 @@ a:hover {
   gap: 8px;
 }
 
+.multisource-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  margin-bottom: 18px;
+}
+
+.ms-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 56px;
+  border-radius: 8px;
+  border: 1px solid rgba(40, 118, 91, 0.18);
+  background: linear-gradient(180deg, #ffffff, #eef5f1);
+  color: var(--accent-dark);
+  font-size: 13px;
+  font-weight: 700;
+}
+
 code {
   padding: 2px 5px;
   border-radius: 5px;
