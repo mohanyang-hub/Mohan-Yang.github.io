@@ -8,8 +8,8 @@ This repository hosts the GitHub Pages homepage of Mohan Yang.
 - 3D crop and canopy modeling
 - Multi-source disease monitoring
 - Radiative transfer simulation
-- Greenhouse environmental simulation
-- Multimodal fusion for plant phenotyping
+- Environmental simulation
+- Multimodal plant phenotyping
 
 ## Repository layout
 
