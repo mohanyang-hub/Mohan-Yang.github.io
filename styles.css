@@ -172,7 +172,7 @@ a:hover {
 
 .profile-card {
   position: relative;
-  padding: 28px;
+  padding: 24px;
   overflow: hidden;
   background:
     linear-gradient(180deg, rgba(255, 255, 255, 0.95), rgba(247, 251, 248, 0.95)),
@@ -192,35 +192,76 @@ a:hover {
   background: linear-gradient(90deg, var(--accent-dark), var(--accent), var(--warm));
 }
 
-.profile-card h2 {
-  margin: 0 0 10px;
+.profile-photo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 104px;
+  height: 128px;
+  margin: 0 auto 18px;
+  border: 1px solid rgba(18, 63, 51, 0.18);
+  border-radius: 8px;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.72), rgba(220, 235, 228, 0.9)),
+    radial-gradient(circle at 50% 30%, rgba(47, 123, 97, 0.16), transparent 42%);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.9), 0 10px 22px rgba(28, 54, 42, 0.08);
+}
+
+.profile-photo span {
+  color: var(--accent-dark);
   font-size: 30px;
+  font-weight: 700;
+}
+
+.profile-card h2 {
+  margin: 0 0 8px;
+  font-size: 29px;
 }
 
 .profile-card p {
-  margin: 6px 0;
+  margin: 5px 0;
   color: var(--muted);
   font-size: 16px;
 }
 
+.profile-contact {
+  display: grid;
+  gap: 5px;
+  margin: 14px 0 10px;
+  padding: 12px 0;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.profile-contact a {
+  overflow-wrap: anywhere;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.profile-interests {
+  color: var(--accent-dark) !important;
+  font-weight: 700;
+}
+
 .profile-stats {
   display: grid;
-  gap: 12px;
-  margin-top: 22px;
-  padding-top: 20px;
+  gap: 10px;
+  margin-top: 16px;
+  padding-top: 16px;
   border-top: 1px solid var(--line);
 }
 
 .profile-stats div {
   display: grid;
-  grid-template-columns: 58px minmax(0, 1fr);
-  gap: 12px;
+  grid-template-columns: 54px minmax(0, 1fr);
+  gap: 10px;
   align-items: center;
 }
 
 .profile-stats strong {
   color: var(--accent-dark);
-  font-size: 28px;
+  font-size: 26px;
   line-height: 1;
 }
 
