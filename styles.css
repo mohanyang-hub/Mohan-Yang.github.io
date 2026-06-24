@@ -84,7 +84,7 @@ a:hover {
 
 .hero {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 340px;
+  grid-template-columns: minmax(0, 1fr) 380px;
   gap: 54px;
   align-items: center;
   min-height: 660px;
@@ -172,7 +172,7 @@ a:hover {
 
 .profile-card {
   position: relative;
-  padding: 24px;
+  padding: 28px;
   overflow: hidden;
   background:
     linear-gradient(180deg, rgba(255, 255, 255, 0.95), rgba(247, 251, 248, 0.95)),
@@ -193,36 +193,36 @@ a:hover {
 }
 
 .profile-photo {
-  width: 112px;
-  height: 144px;
-  margin: 0 auto 18px;
+  position: relative;
+  z-index: 1;
+  width: 118px;
+  height: 152px;
+  margin: 0 auto 20px;
   overflow: hidden;
   border: 1px solid rgba(18, 63, 51, 0.18);
   border-radius: 8px;
-  background: #eef5f1;
+  background: #eef5f1 url("assets/profile.jpg") center 28% / cover no-repeat;
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.9), 0 10px 22px rgba(28, 54, 42, 0.08);
 }
 
-.profile-photo img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center 28%;
-}
-
 .profile-card h2 {
+  position: relative;
+  z-index: 1;
   margin: 0 0 8px;
   font-size: 29px;
 }
 
 .profile-card p {
+  position: relative;
+  z-index: 1;
   margin: 5px 0;
   color: var(--muted);
   font-size: 16px;
 }
 
 .profile-contact {
+  position: relative;
+  z-index: 1;
   display: grid;
   gap: 5px;
   margin: 14px 0 10px;
@@ -233,8 +233,14 @@ a:hover {
 
 .profile-contact a {
   overflow-wrap: anywhere;
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 700;
+}
+
+.profile-interests,
+.profile-stats {
+  position: relative;
+  z-index: 1;
 }
 
 .profile-interests {
@@ -259,7 +265,7 @@ a:hover {
 
 .profile-stats strong {
   color: var(--accent-dark);
-  font-size: 26px;
+  font-size: 24px;
   line-height: 1;
 }
 
