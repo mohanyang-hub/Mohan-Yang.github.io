@@ -362,10 +362,67 @@ a:hover {
 
 .card p,
 .project p,
+.publication-body p,
 .project-list,
 .contact-box {
   color: var(--muted);
   font-size: 16px;
+}
+
+.publication-list {
+  display: grid;
+  gap: 16px;
+}
+
+.publication {
+  display: grid;
+  grid-template-columns: 42px minmax(0, 1fr);
+  gap: 18px;
+  padding: 22px 24px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  box-shadow: 0 14px 32px rgba(28, 54, 42, 0.06);
+}
+
+.publication-index {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: 700;
+  background: var(--accent-dark);
+  border-radius: 50%;
+}
+
+.publication-body p {
+  margin: 0;
+  line-height: 1.58;
+}
+
+.publication-body strong {
+  color: var(--text);
+}
+
+.publication-body em {
+  color: var(--text);
+}
+
+.publication-note {
+  display: inline-block;
+  margin-left: 6px;
+  color: var(--accent-dark);
+  font-weight: 700;
+}
+
+.publication-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 14px;
 }
 
 .project {
@@ -573,6 +630,7 @@ code {
   .content-grid,
   .cards,
   .workflow,
+  .publication,
   .project {
     grid-template-columns: 1fr;
   }
