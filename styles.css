@@ -204,9 +204,9 @@ a:hover {
 .profile-photo {
   position: relative;
   z-index: 1;
-  width: 118px;
-  height: 152px;
-  margin: 0 auto 20px;
+  width: 150px;
+  height: 190px;
+  margin: 0 auto 22px;
   overflow: hidden;
   border: 1px solid rgba(18, 63, 51, 0.18);
   border-radius: 8px;
@@ -246,8 +246,7 @@ a:hover {
   font-weight: 700;
 }
 
-.profile-interests,
-.profile-stats {
+.profile-interests {
   position: relative;
   z-index: 1;
 }
@@ -255,33 +254,6 @@ a:hover {
 .profile-interests {
   color: var(--accent-dark) !important;
   font-weight: 700;
-}
-
-.profile-stats {
-  display: grid;
-  gap: 10px;
-  margin-top: 16px;
-  padding-top: 16px;
-  border-top: 1px solid var(--line);
-}
-
-.profile-stats div {
-  display: grid;
-  grid-template-columns: 54px minmax(0, 1fr);
-  gap: 10px;
-  align-items: center;
-}
-
-.profile-stats strong {
-  color: var(--accent-dark);
-  font-size: 24px;
-  line-height: 1;
-}
-
-.profile-stats span {
-  color: var(--muted);
-  font-size: 14px;
-  line-height: 1.35;
 }
 
 .tinted {
@@ -621,11 +593,6 @@ code {
 
   .section {
     padding: 54px 24px;
-  }
-
-  .profile-stats {
-    grid-template-columns: 1fr;
-    gap: 8px;
   }
 
   .project-visual {
