@@ -1,0 +1,257 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1700" height="980" viewBox="0 0 1700 980">
+  <defs>
+    <style>
+      .title{font-family:Arial,Helvetica,sans-serif;font-weight:700;font-size:30px;fill:#151515}
+      .subtitle{font-family:Arial,Helvetica,sans-serif;font-weight:700;font-size:22px;fill:#1e1e1e}
+      .label{font-family:Arial,Helvetica,sans-serif;font-size:18px;fill:#222}
+      .small{font-family:Arial,Helvetica,sans-serif;font-size:15px;fill:#333}
+      .tiny{font-family:Arial,Helvetica,sans-serif;font-size:13px;fill:#333}
+      .math{font-family:"Times New Roman",serif;font-size:20px;fill:#111}
+      .box{fill:#fff;stroke:#cfd8dc;stroke-width:2.2}
+      .soft{fill:#f8fbff;stroke:#d7e3ef;stroke-width:2}
+      .arrow{stroke:#111;stroke-width:2.4;fill:none;marker-end:url(#arrow)}
+      .thinArrow{stroke:#333;stroke-width:1.7;fill:none;marker-end:url(#arrowSmall)}
+      .dash{stroke:#777;stroke-width:1.3;stroke-dasharray:5 5;fill:none}
+      .green{fill:#b7d79d}
+      .yellow{fill:#f2c66d}
+      .red{fill:#f18b93}
+      .blue{fill:#8fb0e8}
+      .purple{fill:#b8a2dc}
+      .darkPurple{fill:#7043a7}
+      .mint{fill:#eaf7ef;stroke:#b7d8c2;stroke-width:2}
+      .amber{fill:#fff7e8;stroke:#f2c66d;stroke-width:2}
+      .rose{fill:#fff1f3;stroke:#f3b1b7;stroke-width:2}
+      .ice{fill:#f0f6ff;stroke:#9dbbe8;stroke-width:2}
+      .violetPanel{fill:#fbf7ff;stroke:#7c55c7;stroke-width:2.2}
+      .goldPanel{fill:#fffaf0;stroke:#e7ae28;stroke-width:2.2}
+    </style>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M 0 0 L 12 6 L 0 12 z" fill="#111"/>
+    </marker>
+    <marker id="arrowSmall" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto">
+      <path d="M 0 0 L 9 4.5 L 0 9 z" fill="#333"/>
+    </marker>
+    <linearGradient id="leafGrad" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0" stop-color="#4e9f55"/>
+      <stop offset="1" stop-color="#b87828"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1700" height="980" fill="#ffffff"/>
+
+  <!-- Main panels -->
+  <text x="48" y="50" class="title">1. Multi-modal Input Encoders</text>
+  <text x="610" y="50" class="title">2. Bottleneck Attention Fusion</text>
+  <text x="1165" y="50" class="title">3. Stage-aware Fusion and Output</text>
+
+  <!-- Left encoders -->
+  <rect x="38" y="74" width="500" height="848" rx="28" class="soft"/>
+
+  <rect x="70" y="105" width="410" height="155" rx="22" class="mint"/>
+  <text x="95" y="138" class="subtitle">Spectral Encoder</text>
+  <text x="95" y="164" class="small">Multi-scale 1D CNN + SE</text>
+  <g transform="translate(108,184)">
+    <rect x="0" y="0" width="58" height="32" rx="9" fill="#dff0d8" stroke="#89b878"/>
+    <rect x="82" y="0" width="58" height="32" rx="9" fill="#dff0d8" stroke="#89b878"/>
+    <rect x="164" y="0" width="58" height="32" rx="9" fill="#dff0d8" stroke="#89b878"/>
+    <text x="8" y="22" class="tiny">k=3</text><text x="90" y="22" class="tiny">k=5</text><text x="172" y="22" class="tiny">k=7</text>
+    <path d="M58 16 H82" class="thinArrow"/><path d="M140 16 H164" class="thinArrow"/>
+    <rect x="250" y="-3" width="64" height="38" rx="10" fill="#fff" stroke="#9abc8d"/>
+    <text x="269" y="22" class="tiny">SE</text>
+    <path d="M222 16 H250" class="thinArrow"/>
+    <rect x="340" y="-3" width="52" height="38" rx="10" fill="#fff" stroke="#9abc8d"/>
+    <text x="352" y="22" class="tiny">MLP</text>
+    <path d="M314 16 H340" class="thinArrow"/>
+  </g>
+  <rect x="426" y="190" width="60" height="24" class="green"/>
+  <text x="426" y="183" class="tiny">h_spec</text>
+
+  <rect x="70" y="290" width="410" height="125" rx="22" class="mint"/>
+  <text x="95" y="324" class="subtitle">SPAD Encoder</text>
+  <text x="95" y="350" class="small">Lightweight MLP</text>
+  <g transform="translate(260,318)">
+    <rect x="0" y="0" width="130" height="52" fill="#aacb8e"/>
+    <g fill="#fff">
+      <circle cx="18" cy="14" r="6"/><circle cx="42" cy="14" r="6"/><circle cx="66" cy="14" r="6"/><circle cx="90" cy="14" r="6"/><circle cx="114" cy="14" r="6"/>
+      <circle cx="18" cy="38" r="6"/><circle cx="42" cy="38" r="6"/><circle cx="66" cy="38" r="6"/><circle cx="90" cy="38" r="6"/><circle cx="114" cy="38" r="6"/>
+    </g>
+    <path d="M130 10 L170 26 L130 42" fill="none" stroke="#333" stroke-width="1.4"/>
+  </g>
+  <rect x="426" y="336" width="60" height="24" class="green"/>
+  <text x="426" y="329" class="tiny">h_spad</text>
+
+  <rect x="390" y="245" width="115" height="52" rx="12" fill="#eef8e9" stroke="#9abc8d" stroke-width="1.7"/>
+  <text x="406" y="267" class="tiny">Concat</text>
+  <text x="410" y="286" class="tiny">+ MLP</text>
+  <path d="M456 214 V245" class="thinArrow"/>
+  <path d="M456 336 V297" class="thinArrow"/>
+  <rect x="505" y="258" width="62" height="28" class="green"/>
+  <text x="510" y="250" class="tiny">z1 32-d</text>
+  <path d="M505 271 H535" class="thinArrow"/>
+
+  <rect x="70" y="445" width="410" height="125" rx="22" class="amber"/>
+  <text x="95" y="479" class="subtitle">Handcrafted Encoder</text>
+  <text x="95" y="505" class="small">VI + red-edge + GLCM</text>
+  <g transform="translate(290,477)">
+    <rect x="0" y="0" width="96" height="48" class="yellow"/>
+    <g fill="#fff"><circle cx="16" cy="14" r="5"/><circle cx="38" cy="14" r="5"/><circle cx="60" cy="14" r="5"/><circle cx="82" cy="14" r="5"/><circle cx="16" cy="34" r="5"/><circle cx="38" cy="34" r="5"/><circle cx="60" cy="34" r="5"/><circle cx="82" cy="34" r="5"/></g>
+    <path d="M96 8 L132 24 L96 40" fill="none" stroke="#333" stroke-width="1.4"/>
+  </g>
+  <rect x="505" y="494" width="62" height="28" class="yellow"/>
+  <text x="510" y="486" class="tiny">z2 32-d</text>
+
+  <rect x="70" y="600" width="410" height="125" rx="22" class="rose"/>
+  <text x="95" y="634" class="subtitle">R-G-NIR Patch Encoder</text>
+  <text x="95" y="660" class="small">Lightweight 2D CNN</text>
+  <g transform="translate(300,627)" fill="#f09aa7" stroke="#c96e7a">
+    <path d="M0 0 L34 10 V64 L0 54 Z"/><path d="M26 12 L58 22 V68 L26 58 Z"/><path d="M52 25 L82 33 V72 L52 64 Z"/><path d="M76 36 L103 43 V75 L76 68 Z"/><path d="M98 45 L123 51 V77 L98 72 Z"/>
+  </g>
+  <rect x="505" y="650" width="62" height="28" class="red"/>
+  <text x="510" y="642" class="tiny">z3 32-d</text>
+
+  <rect x="70" y="755" width="410" height="125" rx="22" class="ice"/>
+  <text x="95" y="789" class="subtitle">3D Structure Encoder</text>
+  <text x="95" y="815" class="small">PH, area, volume, density</text>
+  <g transform="translate(290,787)">
+    <rect x="0" y="0" width="96" height="48" class="blue"/>
+    <g fill="#fff"><circle cx="16" cy="14" r="5"/><circle cx="38" cy="14" r="5"/><circle cx="60" cy="14" r="5"/><circle cx="82" cy="14" r="5"/><circle cx="16" cy="34" r="5"/><circle cx="38" cy="34" r="5"/><circle cx="60" cy="34" r="5"/><circle cx="82" cy="34" r="5"/></g>
+    <path d="M96 8 L132 24 L96 40" fill="none" stroke="#333" stroke-width="1.4"/>
+  </g>
+  <rect x="505" y="805" width="62" height="28" class="blue"/>
+  <text x="510" y="797" class="tiny">z4 32-d</text>
+
+  <!-- Connector to bottleneck -->
+  <path d="M568 272 C585 272 585 508 608 508" class="arrow"/>
+  <path d="M568 508 C585 508 585 508 608 508" class="arrow"/>
+  <path d="M568 664 C585 664 585 508 608 508" class="arrow"/>
+  <path d="M568 819 C585 819 585 508 608 508" class="arrow"/>
+  <text x="558" y="475" class="math">Z=[z₁,z₂,z₃,z₄]</text>
+
+  <!-- Middle bottleneck fusion -->
+  <rect x="625" y="74" width="505" height="848" rx="26" class="violetPanel"/>
+
+  <rect x="660" y="108" width="435" height="95" rx="18" fill="#fff" stroke="#b8a2dc" stroke-width="2"/>
+  <text x="705" y="142" class="subtitle">Learnable Bottleneck Tokens</text>
+  <text x="788" y="174" class="math">B = [b₁, b₂], M = 2</text>
+  <g transform="translate(725,163)">
+    <rect x="0" y="26" width="62" height="24" class="purple"/><rect x="112" y="26" width="62" height="24" class="purple"/>
+    <polygon points="22,38 35,26 48,38 35,50" class="darkPurple"/>
+    <polygon points="134,38 147,26 160,38 147,50" class="darkPurple"/>
+  </g>
+
+  <path d="M878 203 V238" class="arrow"/>
+  <rect x="660" y="238" width="435" height="170" rx="20" fill="#f7fbff" stroke="#2e6dde" stroke-width="2.2"/>
+  <text x="735" y="274" class="subtitle">Bottleneck-to-Modality Attention</text>
+  <text x="773" y="301" class="small">B queries all modality tokens</text>
+  <g transform="translate(705,325)">
+    <rect x="0" y="0" width="78" height="24" class="green"/><rect x="100" y="0" width="78" height="24" class="yellow"/><rect x="200" y="0" width="78" height="24" class="red"/><rect x="300" y="0" width="78" height="24" class="blue"/>
+    <text x="27" y="52" class="tiny">z1</text><text x="127" y="52" class="tiny">z2</text><text x="227" y="52" class="tiny">z3</text><text x="327" y="52" class="tiny">z4</text>
+    <rect x="120" y="82" width="62" height="24" class="purple"/><rect x="212" y="82" width="62" height="24" class="purple"/>
+    <path d="M39 24 L151 82" class="dash"/><path d="M139 24 L151 82" class="dash"/><path d="M239 24 L151 82" class="dash"/><path d="M339 24 L151 82" class="dash"/>
+    <path d="M39 24 L243 82" class="dash"/><path d="M139 24 L243 82" class="dash"/><path d="M239 24 L243 82" class="dash"/><path d="M339 24 L243 82" class="dash"/>
+  </g>
+
+  <path d="M878 408 V443" class="arrow"/>
+  <rect x="660" y="443" width="435" height="108" rx="18" fill="#fff" stroke="#b8a2dc" stroke-width="2"/>
+  <text x="728" y="480" class="subtitle">Updated Bottleneck Tokens</text>
+  <text x="825" y="515" class="math">B′</text>
+
+  <path d="M878 551 V586" class="arrow"/>
+  <rect x="660" y="586" width="435" height="210" rx="20" class="goldPanel"/>
+  <text x="730" y="623" class="subtitle">Modality-to-Bottleneck Attention</text>
+  <text x="754" y="650" class="small">Z queries B′ to refine modality tokens</text>
+  <g transform="translate(705,675)">
+    <rect x="120" y="0" width="62" height="24" class="purple"/><rect x="212" y="0" width="62" height="24" class="purple"/>
+    <rect x="0" y="100" width="78" height="24" class="green"/><rect x="100" y="100" width="78" height="24" class="yellow"/><rect x="200" y="100" width="78" height="24" class="red"/><rect x="300" y="100" width="78" height="24" class="blue"/>
+    <path d="M151 24 L39 100" class="dash"/><path d="M151 24 L139 100" class="dash"/><path d="M151 24 L239 100" class="dash"/><path d="M151 24 L339 100" class="dash"/>
+    <path d="M243 24 L39 100" class="dash"/><path d="M243 24 L139 100" class="dash"/><path d="M243 24 L239 100" class="dash"/><path d="M243 24 L339 100" class="dash"/>
+    <text x="20" y="150" class="tiny">z1*</text><text x="120" y="150" class="tiny">z2*</text><text x="220" y="150" class="tiny">z3*</text><text x="320" y="150" class="tiny">z4*</text>
+  </g>
+
+  <path d="M878 796 V840" class="arrow"/>
+  <rect x="700" y="840" width="360" height="52" rx="16" fill="#fff" stroke="#b8a2dc" stroke-width="2"/>
+  <text x="732" y="874" class="subtitle">Refined Modality Representations Z*</text>
+
+  <!-- Right fusion -->
+  <path d="M1130 866 H1186" class="arrow"/>
+  <rect x="1195" y="74" width="455" height="848" rx="26" class="soft"/>
+
+  <rect x="1225" y="108" width="310" height="150" rx="22" fill="#ffffff" stroke="#d7e3ef" stroke-width="2"/>
+  <text x="1254" y="143" class="subtitle">Stage-aware Gating Network</text>
+  <g transform="translate(1267,175)" stroke="#222" stroke-width="2">
+    <circle cx="0" cy="0" r="15" class="darkPurple"/><circle cx="135" cy="0" r="15" class="darkPurple"/><circle cx="270" cy="0" r="15" class="darkPurple"/>
+    <circle cx="0" cy="58" r="15" class="darkPurple"/><circle cx="135" cy="58" r="15" class="darkPurple"/><circle cx="270" cy="58" r="15" class="darkPurple"/>
+    <line x1="0" y1="0" x2="135" y2="58"/><line x1="0" y1="58" x2="135" y2="0"/><line x1="135" y1="0" x2="270" y2="58"/><line x1="135" y1="58" x2="270" y2="0"/>
+  </g>
+  <text x="1245" y="243" class="tiny">Input: Z*</text>
+
+  <rect x="1225" y="292" width="310" height="115" rx="22" fill="#ffffff" stroke="#d7e3ef" stroke-width="2"/>
+  <text x="1282" y="327" class="subtitle">Modality Weights α</text>
+  <g transform="translate(1270,355)">
+    <circle cx="0" cy="0" r="24" class="green"/><circle cx="72" cy="0" r="24" class="yellow"/><circle cx="144" cy="0" r="24" class="red"/><circle cx="216" cy="0" r="24" class="blue"/>
+    <text x="-11" y="45" class="tiny">Spec</text><text x="55" y="45" class="tiny">Hand</text><text x="129" y="45" class="tiny">R-G-NIR</text><text x="205" y="45" class="tiny">3D</text>
+  </g>
+  <path d="M1380 258 V292" class="arrow"/>
+
+  <rect x="1225" y="440" width="310" height="102" rx="14" fill="#fff" stroke="#7c55c7" stroke-width="2"/>
+  <text x="1285" y="474" class="subtitle">Weighted Fusion</text>
+  <text x="1265" y="515" class="math">z<tspan baseline-shift="sub" font-size="15">fused</tspan> = Σ α<tspan baseline-shift="sub" font-size="15">m</tspan> z<tspan baseline-shift="sub" font-size="15">m</tspan>*</text>
+  <path d="M1380 407 V440" class="arrow"/>
+
+  <rect x="1225" y="575" width="310" height="145" rx="22" fill="#fffaf6" stroke="#f0c7a5" stroke-width="2"/>
+  <text x="1282" y="607" class="subtitle">Stage-aware Prior</text>
+  <text x="1285" y="635" class="small">Weak prior along CLS progression</text>
+  <g transform="translate(1270,652)">
+    <path d="M24 65 C4 45 10 8 25 0 C41 11 48 44 24 65 Z" fill="#5da05b"/><line x1="24" y1="8" x2="24" y2="75" stroke="#3f7e42" stroke-width="2"/>
+    <path d="M84 65 C64 45 70 8 85 0 C101 11 108 44 84 65 Z" fill="#83ad43"/><circle cx="93" cy="32" r="4" fill="#b87a2b"/><line x1="84" y1="8" x2="84" y2="75" stroke="#5d8332" stroke-width="2"/>
+    <path d="M144 65 C124 45 130 8 145 0 C161 11 168 44 144 65 Z" fill="#9f9a39"/><circle cx="134" cy="28" r="5" fill="#9a4e2c"/><circle cx="153" cy="42" r="5" fill="#9a4e2c"/><line x1="144" y1="8" x2="144" y2="75" stroke="#766f2d" stroke-width="2"/>
+    <path d="M204 65 C184 45 190 8 205 0 C221 11 228 44 204 65 Z" fill="#b4832c"/><circle cx="196" cy="26" r="5" fill="#8a3e2b"/><circle cx="211" cy="44" r="6" fill="#8a3e2b"/><line x1="204" y1="8" x2="204" y2="75" stroke="#7d5c24" stroke-width="2"/>
+    <path d="M264 65 C244 45 250 8 265 0 C281 11 288 44 264 65 Z" fill="url(#leafGrad)"/><circle cx="256" cy="22" r="6" fill="#7b3629"/><circle cx="273" cy="48" r="7" fill="#7b3629"/><line x1="264" y1="8" x2="264" y2="75" stroke="#6c4d23" stroke-width="2"/>
+    <text x="14" y="96" class="tiny">G1</text><text x="74" y="96" class="tiny">G3</text><text x="134" y="96" class="tiny">G5</text><text x="194" y="96" class="tiny">G7</text><text x="254" y="96" class="tiny">G9</text>
+  </g>
+
+  <!-- Prediction head -->
+  <rect x="1570" y="108" width="110" height="315" rx="22" fill="#ffffff" stroke="#d7e3ef" stroke-width="2"/>
+  <text x="1584" y="143" class="subtitle">Prediction</text>
+  <text x="1600" y="168" class="subtitle">Head</text>
+  <rect x="1590" y="198" width="70" height="50" rx="12" fill="#f8fbff" stroke="#bcd4ee"/>
+  <text x="1606" y="220" class="tiny">FC(32)</text><text x="1598" y="240" class="tiny">ReLU+Drop</text>
+  <path d="M1625 248 V278" class="thinArrow"/>
+  <rect x="1590" y="278" width="70" height="50" rx="12" fill="#f8fbff" stroke="#bcd4ee"/>
+  <text x="1608" y="306" class="tiny">FC(5)</text>
+  <path d="M1625 328 V358" class="thinArrow"/>
+  <rect x="1590" y="358" width="70" height="38" rx="12" fill="#f8fbff" stroke="#bcd4ee"/>
+  <text x="1603" y="383" class="tiny">Softmax</text>
+  <path d="M1535 491 H1570" class="arrow"/>
+
+  <!-- Evaluation outputs -->
+  <rect x="1225" y="755" width="425" height="126" rx="22" fill="#ffffff" stroke="#d7e3ef" stroke-width="2"/>
+  <text x="1252" y="789" class="subtitle">Classifier and Output Analysis</text>
+  <g transform="translate(1250,812)">
+    <rect x="0" y="0" width="70" height="50" fill="#f8fbff" stroke="#c9d9eb"/>
+    <rect x="0" y="0" width="23" height="16" fill="#e3eec9"/><rect x="23" y="0" width="23" height="16" fill="#f5d58b"/><rect x="46" y="0" width="24" height="16" fill="#f1a88d"/>
+    <rect x="0" y="16" width="23" height="17" fill="#cbe3d8"/><rect x="23" y="16" width="23" height="17" fill="#ca7b37"/><rect x="46" y="16" width="24" height="17" fill="#e4e5bf"/>
+    <rect x="0" y="33" width="23" height="17" fill="#d8e7f7"/><rect x="23" y="33" width="23" height="17" fill="#e7c26c"/><rect x="46" y="33" width="24" height="17" fill="#a6d6bd"/>
+    <text x="6" y="77" class="small">LOPO CV</text>
+  </g>
+  <g transform="translate(1368,812)">
+    <text x="0" y="5" class="small">Metrics</text>
+    <text x="0" y="32" class="tiny">OA</text><text x="0" y="52" class="tiny">Macro-F1</text><text x="0" y="72" class="tiny">MAE</text><text x="0" y="92" class="tiny">QWK</text>
+  </g>
+  <g transform="translate(1475,812)">
+    <rect x="0" y="0" width="70" height="50" fill="#f8fbff" stroke="#c9d9eb"/>
+    <rect x="0" y="0" width="23" height="16" fill="#1f5f9f"/><rect x="23" y="0" width="23" height="16" fill="#d7e8f6"/><rect x="46" y="0" width="24" height="16" fill="#ecf3fb"/>
+    <rect x="0" y="16" width="23" height="17" fill="#cfe2f3"/><rect x="23" y="16" width="23" height="17" fill="#2b76b7"/><rect x="46" y="16" width="24" height="17" fill="#d2e7f5"/>
+    <rect x="0" y="33" width="23" height="17" fill="#f2f6fb"/><rect x="23" y="33" width="23" height="17" fill="#c8def1"/><rect x="46" y="33" width="24" height="17" fill="#4f97c7"/>
+    <text x="-2" y="77" class="small">Error map</text>
+  </g>
+  <g transform="translate(1570,812)">
+    <rect x="0" y="0" width="70" height="50" fill="#f8fbff" stroke="#c9d9eb"/>
+    <rect x="0" y="0" width="23" height="16" fill="#72b6c4"/><rect x="23" y="0" width="23" height="16" fill="#d3e7a0"/><rect x="46" y="0" width="24" height="16" fill="#edf4ba"/>
+    <rect x="0" y="16" width="23" height="17" fill="#a7d5b4"/><rect x="23" y="16" width="23" height="17" fill="#f1dc8d"/><rect x="46" y="16" width="24" height="17" fill="#b3d7ba"/>
+    <rect x="0" y="33" width="23" height="17" fill="#ecf1b6"/><rect x="23" y="33" width="23" height="17" fill="#9ccfc3"/><rect x="46" y="33" width="24" height="17" fill="#79b9af"/>
+    <text x="-2" y="77" class="small">Attention</text>
+  </g>
+
+  <text x="48" y="955" class="small">AMAF-Net: Lightweight Bottleneck-guided Stage-aware Multimodal Fusion Network for sugar beet CLS severity grading.</text>
+</svg>

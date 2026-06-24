@@ -230,21 +230,21 @@
 
       <article class="project">
         <div>
-          <p class="project-label">Multi-source sensing / Disease grading</p>
-          <h3>Multi-source disease severity grading</h3>
+          <p class="project-label">AMAF-Net / Python / Multi-source disease monitoring</p>
+          <h3>Multi-source crop disease severity grading</h3>
           <p>
             This project integrates spectral, physiological, canopy image, and structural observations for disease
             severity assessment under heterogeneous field conditions. The work emphasizes plant-centered alignment,
             multimodal fusion, and interpretable severity grading.
           </p>
           <ul class="project-list">
-            <li>Data sources: hyperspectral, SPAD, UAV canopy sensing, false-color imagery, and 3D structure.</li>
+            <li>Data sources: hyperspectral/SPAD, UAV canopy sensing, R-G-NIR imagery, and 3D structure.</li>
             <li>Core tasks: multi-source feature construction, fusion modeling, and severity grading.</li>
-            <li>Focus: robust disease assessment with cross-scale complementary information.</li>
-            <li>Presentation: compact project summary on the homepage.</li>
+            <li>Model design: bottleneck-guided multimodal interaction with stage-aware attention weights.</li>
+            <li>Outputs: classification metrics, confusion matrices, and attention-weight visualizations.</li>
           </ul>
         </div>
-        <div class="project-visual multisource-visual" aria-label="Multi-source disease grading visual summary">
+        <div class="project-visual multisource-visual" aria-label="Multi-source disease monitoring visual summary">
           <div class="multisource-grid">
             <span class="ms-card">HSI</span>
             <span class="ms-card">SPAD</span>
@@ -261,8 +261,9 @@
           </div>
         </div>
         <div class="project-links">
-          <a class="button primary" href="projects/multisource-disease-grading/README.md">Project README</a>
-          <a class="button" href="projects/multisource-disease-grading/">Project Folder</a>
+          <a class="button primary" href="projects/multisource-disease-monitoring/train_adaptive_multimodal_attention.py">Training Code</a>
+          <a class="button" href="projects/multisource-disease-monitoring/README.md">Project README</a>
+          <a class="button" href="projects/multisource-disease-monitoring/">Project Folder</a>
         </div>
       </article>
     </section>
@@ -273,15 +274,15 @@
         <h2>Repository Notes</h2>
       </div>
       <div class="content-grid">
-          <p>
+        <p>
           Uploaded research code is organized under <code>projects/</code>. The CLion-based 3D environmental simulation
           code is placed under <code>projects/helios-greenhouse/</code>, the LESS canopy radiative transfer workflow
-          under <code>projects/less-maize-canopy/</code>, and the multi-source disease grading work under
-          <code>projects/multisource-disease-grading/</code>.
+          under <code>projects/less-maize-canopy/</code>, and the multi-source disease monitoring code under
+          <code>projects/multisource-disease-monitoring/</code>.
         </p>
         <p>
-          Additional project files and repositories can be expanded later as code structure, figures, and documentation
-          are further separated and standardized.
+          Each project folder keeps a compact README and representative source files. Large raw datasets,
+          intermediate outputs, and local dependency folders are kept outside the public homepage repository.
         </p>
       </div>
     </section>

@@ -19,9 +19,10 @@ styles.css
 README.md
 projects/helios-greenhouse/
 projects/less-maize-canopy/
+projects/multisource-disease-monitoring/
 ```
 
-- `index.html` and `styles.css` define the homepage.
+- `index.html` and `styles.css` define the GitHub Pages homepage.
 - `projects/helios-greenhouse/` contains the CLion/C++ 3D environmental simulation workflow.
 - `projects/less-maize-canopy/` contains the LESS-based canopy radiative transfer workflow.
-- The multi-source disease grading work is summarized directly on the homepage as a compact featured project.
+- `projects/multisource-disease-monitoring/` contains representative Python code for multi-source crop disease severity grading and attention visualization.

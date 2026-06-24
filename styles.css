@@ -420,6 +420,35 @@ a:hover {
   background: linear-gradient(180deg, var(--berry), var(--sky) 55%, var(--accent));
 }
 
+.disease-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 8px;
+  align-items: end;
+  height: 142px;
+  margin-bottom: 18px;
+  padding: 16px 10px 10px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.78), rgba(220, 235, 227, 0.65));
+  border-radius: 8px;
+}
+
+.grade {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 34px;
+  border-radius: 8px;
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.g1 { height: 38%; background: #3f8f69; }
+.g3 { height: 48%; background: #6ea65f; }
+.g5 { height: 62%; background: #d9a642; }
+.g7 { height: 76%; background: #c66b45; }
+.g9 { height: 90%; background: #8a4f7d; }
+
 .visual-metrics {
   display: flex;
   flex-wrap: wrap;
@@ -501,5 +530,9 @@ code {
 
   .project-visual {
     min-height: 220px;
+  }
+
+  .disease-grid {
+    height: 120px;
   }
 }
